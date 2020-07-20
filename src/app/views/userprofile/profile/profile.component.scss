@@ -1,0 +1,17 @@
+
+.card-body,.container{
+    padding-right:0px !important;
+    padding-left:0px !important;
+}
+
+/* On screens that are 320px or less, set the background color to blue */
+@media only screen and (max-width: 320px) {
+        .mediaPrepend {
+        width: 120px ;
+        font-size: 2px;
+    }
+  }
+  .alert{
+      padding-top: 0px;
+      padding-bottom: 0px;
+  }

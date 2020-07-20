@@ -1,0 +1,20 @@
+
+  <div class="card ">
+    <div *ngFor="let user of faqs_questions">
+      <mat-card style="margin: 2px">
+        <div class="row">
+          <div class="col-md-9" style="display: flex" >
+            <img class="image" src="{{user.userAvatar}}" alt="">&nbsp;&nbsp;&nbsp;
+            <div>              
+              <div>{{user.faq_data}}</div>
+              <div>
+                {{user.faq_date}}
+              </div>
+            </div>
+            
+          </div>
+      
+        </div>
+      </mat-card>
+    </div>
+  </div>

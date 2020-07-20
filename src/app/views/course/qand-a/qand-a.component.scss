@@ -1,0 +1,37 @@
+.image{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+}
+.ql-editor{
+    min-height: 100px !important;
+}
+
+// ghost css
+$row-gap: 15px;
+$ghost-row-gap: ($row-gap - 3) px;
+$min-content-height: 459px;
+:host {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    min-height: $min-content-height;
+}
+
+.spinner {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}
+.searchBar{
+    width: 75%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .searchBtn{
+    // flex: 0 0 25%;
+    width: 25%;
+  }

@@ -1,0 +1,42 @@
+
+@import '../../../utils/animations/ghost-animation.scss';
+@import '../bookmarks.component.scss';
+:host {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    // top: 87px;
+    width: 100%;
+}
+
+.ghost_item {
+    overflow: hidden;
+    margin-bottom: -6px;
+    height: auto;
+    .lines {
+        margin-block-end: $ghost-row-gap;
+        // margin-left: $avatar-gap;
+        margin-block-end: $row-gap;
+        // width: calc(100% - $avatar-gap);
+        h6,h4,h5,
+        .matCard {
+            background-color: #ccc !important;
+            border-bottom: 2px solid white !important;
+            border-radius: 4px 4px 4px 4px !important;
+            @include animate-ghost-line;
+        }
+        h6{
+            height: 20px;
+            width:20%
+        }
+        h4{
+            height: 20px;
+            width:40%
+        }
+        h5{
+            height: 25px;
+            width:70%
+        }
+       
+    }
+}

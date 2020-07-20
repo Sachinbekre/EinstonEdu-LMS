@@ -1,0 +1,68 @@
+.astext {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    float: right;
+    font-size : 20px;
+}
+
+mat-step-header .mat-step-label {
+    overflow: visible;
+}
+.test{
+    display: none
+}
+
+.card-body,.container{
+    padding-right:0px !important;
+    padding-left:0px !important;
+}
+
+// Large
+@media only screen and (min-width:  768px)
+{
+
+    .nextbtn{
+        margin-top: 200px;
+        float: right;
+      }
+      
+    .backbtn{
+        margin-top: 200px;
+        float: left;
+      }
+}
+// small
+@media only screen and (max-width: 320px)
+{
+  
+  .nextbtn{
+    margin-top: 125px;
+    float: right;
+  }
+   
+  .backbtn{
+    margin-top: 125px;
+    float: left;
+  }
+  
+}
+
+//mat-card on select
+.color1{
+    background:#e8d4e9
+  }
+  .color2{
+    background:#e8d4e9
+  }
+
+  //radi buttons
+ .boxed{
+    border: 1px solid;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 280px;
+    padding-left: 10px;
+ }

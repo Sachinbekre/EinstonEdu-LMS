@@ -1,0 +1,41 @@
+
+<div class="mediaContent">
+  <mat-card style="height:115px">
+    <br>
+    <h4><b> Purchase history</b></h4>
+   
+  </mat-card>
+
+  <div class="card">
+    <div class="col-md-12" style="overflow-x:auto">
+    <table class="table"  style="margin-top:2%">
+      <tr>
+        <th colspan="2">Purchase History</th>
+        <th>Date</th>
+        <th>Total Price</th>
+        <th>Payment</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let data of purchaseData;let i=index;">
+        <td><i class="cui-cart icons font-2xl d-block mt-4 text-danger"></i></td>
+        <td>
+         <p>{{data.totalCourse.length}} course purchased</p> 
+         <a (click)="viewCourse(i)" class="viewCourse">{{courseName}}</a>
+         <div *ngIf="showList" >
+           <div *ngFor="let dataDetails of data.totalCourse">          
+           <img alt="" class="shopping_img">
+           <img  [src]="dataDetails.courseImage" alt="" width="200" height="112" class="course-img">
+           <a class="shopping-list__course-title" >{{dataDetails.courseName}}</a>
+        <br>
+          </div>
+        </div>
+        </td>
+        <td> {{data.date}}</td>
+        <td><i class="fa fa-rupee"></i>{{data.cost}}</td>
+        <td><i class="fa fa-rupee">{{data.cost}}</i>{{paidThrough}}</td>
+        <td><button class="btn btn-primary" routerLink="receipt">Receipt</button></td>
+      </tr>
+    </table>
+  </div>
+  </div>
+</div>

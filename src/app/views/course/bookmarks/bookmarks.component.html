@@ -1,0 +1,25 @@
+<div class="content">
+  <div *ngFor="let book of bookMarks" >
+    <div *ngIf='users$ | async as users'>
+      <br>
+      <mat-card>
+        <div>
+          <h6>Section {{book.section_id}}</h6>
+        </div>
+        <div>
+          <h4>{{book.name}}</h4>
+        </div>
+        <hr>
+        <div>
+          <h5>{{book.content[0].id}}. {{book.content[0].name}}</h5>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <b style="color: red">{{book.content[0].bookmarked_time}}</b>&nbsp;&nbsp;{{book.content[0].dated}}
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <app-bookmarks-ghost *ngIf="!useSpinner" [ghosts]="ghosts" [@fadeOut]="!ghosts.length" fxLayout="row wrap"></app-bookmarks-ghost>
+</div>

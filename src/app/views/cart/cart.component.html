@@ -1,0 +1,143 @@
+<mat-card style="background-color:#505763;color:aliceblue">
+        <i class="fa fa-home fa-lg" routerLink = ''></i> / Shopping Cart
+        <h3>Shopping Cart</h3>
+    </mat-card>
+    
+    <div class="row">
+        <div class="col-md-12"><br></div>
+        <div class="col-md-8 mainpad" >
+            <h4 class="h4padd">1 Course in Cart</h4>
+    
+    
+            <div class="card" style="margin: 0px 15px 0px 15px;">
+                <div class="card-body">
+                    <div style="display: inline-flex;">
+                        <a href="#">
+                            <img style="width:50px;height:70px;" alt="" [src]="cart.c_avatar">
+                        </a>
+                        <div style="padding-left: 15px;padding-right: 10px;">
+                            <div>
+                                <b>{{cart.course_name}}</b>
+                            </div>
+                            <div *ngFor="let item of cart.author">{{item.name}}<router-outlet name="name"></router-outlet>
+    
+                            </div>
+                            <div style="padding-left: 10px;/* color: red; */">
+                                <div style="color: red;">
+                                    <b><i class="fa fa-rupee fa-lg"></i>&nbsp;&nbsp;{{cart.c_price}}
+                                        <i class="fa fa-tag fa-lg"></i></b>
+                                </div>
+                                <s> <i class="fa fa-rupee fa-lg 4" style=" color: red; "></i>&nbsp;{{cart.Actual_price}}</s>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: inline-flex;/* box-shadow: 0 2px 7px black; */padding-left: 10px;color: #3049a5;text-shadow: 0 0px 0px black;">
+                        <a style="padding-right: 10px;">Remove</a>
+                        <a style="padding-right: 10px;">Save for Later</a>
+                        <a style="padding-right: 10px;">Move to Wishlist</a>
+                    </div>
+                </div>
+            </div>
+    
+            <br>
+    
+    
+            <h4 class="h4padd">Saved For Later</h4>
+            <div class="card" style="margin: 0px 15px 0px 15px;">
+                <div class="card-body">
+                    <div style="display: inline-flex;">
+                        <a href="#">
+                            <img style="width:50px;height:70px;" alt="" [src]="cart.c_avatar">
+                        </a>
+                        <div style="padding-left: 15px;padding-right: 10px;">
+                            <div>
+                                <b>{{cart.course_name}}</b>
+                            </div>
+                            <div *ngFor="let item of cart.author">{{item.name}}<router-outlet name="name"></router-outlet>
+    
+                            </div>
+                            <div style="padding-left: 10px;/* color: red; */">
+                                <div style="color: red;">
+                                    <b><i class="fa fa-rupee fa-lg"></i>&nbsp;{{cart.c_price}}
+                                        <i class="fa fa-tag fa-lg"></i></b>
+                                </div>&nbsp;&nbsp;
+                                <s> <i class="fa fa-rupee fa-lg 4" style=" color: red; "></i> {{cart.Actual_price}}</s>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: inline-flex;/* box-shadow: 0 2px 7px black; */padding-left: 10px;color: #3049a5;text-shadow: 0 0px 0px black;">
+                        <a style="padding-right: 10px;">Remove</a>
+                        <a style="padding-right: 10px;">Save for Later</a>
+                        <a style="padding-right: 10px;">Move to Wishlist</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h4 class="h4padd">Recently Wishlisted Courses</h4>
+            <div class="card view" style="margin: 0px 15px 0px 15px;">
+                <div class="card-body">
+                    <div style="display: inline-flex;">
+                        <a href="#">
+                            <img style="width:50px;height:70px;" alt="" [src]="cart.c_avatar">
+                        </a>
+                        <div style="padding-left: 15px;padding-right: 10px;">
+                            <div>
+                                <b>{{cart.course_name}}</b>
+                            </div>
+                            <div *ngFor="let item of cart.author">{{item.name}}<router-outlet name="name"></router-outlet>
+    
+                            </div>
+                            <div style="padding-left: 10px;/* color: red; */">
+                                <div style="color: red;">
+                                    <b><i class="fa fa-rupee fa-lg"></i>&nbsp;{{cart.c_price}}
+                                        <i class="fa fa-tag fa-lg"></i></b>
+                                </div> &nbsp;&nbsp;
+                                <s> <i class="fa fa-rupee fa-lg 4" style=" color: red; "></i>{{cart.Actual_price}}</s>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: inline-flex;/* box-shadow: 0 2px 7px black; */padding-left: 10px;color: #3049a5;text-shadow: 0 0px 0px black;">
+                        <a style="padding-right: 10px;">Remove</a>
+                        <a style="padding-right: 10px;">Save for Later</a>
+                        <a style="padding-right: 10px;">Move to Wishlist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <div class="card-body">
+                <form action="" method="post" class="form-horizontal">
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="">
+                                <h4 class="mediaqu"> <b>Total: <i class="fa fa-rupee fa-lg mt-4"></i> 770</b></h4>
+    
+                            </div>
+                            <s> <i class="fa fa-rupee fa-lg mt-4"></i> 12800</s>
+                            <p>93% off</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <button aria-pressed="true" class="btn btn-block btn-danger active" type="button">Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <input class="form-control" placeholder="Apply coupon code">
+                                <span class="input-group-append">
+                                    <button type="button" class="btn btn-primary">Apply</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-xs btn-block btn btn-default">View All Coupons</button>
+                    <span>Click on a coupon code to filter</span>
+                </form>
+            </div>
+    
+        </div>
+    </div>

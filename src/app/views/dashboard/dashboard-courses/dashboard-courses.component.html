@@ -1,0 +1,47 @@
+<h4>Courses</h4>
+      <div class="row" style="margin-left: 0px !important;padding-left: 12px;">
+        <div class="mediaQ" *ngFor="let list of courseList">
+          <mat-card style="padding: 0px; cursor: pointer" routerLink = "/unsub-course">
+            <div class="mycourses"  style="margin: 6px">
+              <div class="imageAngular">
+                <img [src]="list.img" alt="Angular Crash Course for Busy Developers" style="width:100%;max-height: 130px">
+                <div class="dropdown-menu dropdown-menu-right m-0" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Instructor Collection</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Share</a>
+                  <a class="dropdown-item" href="#">Create new collection</a>
+                  <a class="dropdown-item" href="#">Favorite</a>
+                  <a class="dropdown-item" href="#">Archived</a>
+                </div>
+              </div>
+              <div class="courseDetails">
+                <div class="details">
+                  <h6>{{list.courseTitle}}</h6>
+                </div>
+                <div>
+                  <p>{{list.author}}</p>
+                </div>
+
+                <div class="coursecomplete" style="display: flex">
+
+                  <div>
+                    <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                    <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                    <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                    <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                    <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                  </div>
+
+                  <div>{{list.rating}}</div>&nbsp;
+                  <div>({{list.totalCounts}})</div>
+                </div>
+                <div class="pull-right">
+
+                  <span><s><i class="fa fa-mobile"></i>{{list.actualPrice}}</s></span>&nbsp;&nbsp;
+                  <span style="font-size: 1.5em"><i class="fa fa-mobile fa-lg"></i>{{list.discountPrice}}</span>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>

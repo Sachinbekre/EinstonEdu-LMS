@@ -1,0 +1,120 @@
+.filter-teach {
+    margin: 20px 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+ .search {
+    margin-right: 20px;
+    width: 600px;
+}
+@media  (max-width:320px) {
+    .details{
+        display: none !important;
+    }
+    .imgcourse{
+        width: 100px !important;
+        padding-left: 7% !important;
+    }
+    .details-data{
+        width: auto;
+    }
+    .search{
+        width: 200px !important;
+    }
+}
+.card--teaching__link {
+    position: absolute;
+    display: block;
+    height: auto;
+    bottom: 0;
+    width: auto;
+    right: -1px;
+    top: 0;
+    left: -1px;
+}
+ .label {
+    //  visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.imgcourse{
+    width: 140px;
+    padding-left: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+p{
+    font-size: 13px;
+    padding-bottom: 30px;
+}
+.details{
+    padding-top: 5px;
+    padding-bottom: 5px; 
+}
+.details-label{
+    border-left: 4px solid #e5e8ea;
+    padding-left: 10px;
+    color: rgba(0,0,0,.54);
+}
+.detail-limit{
+    font-size: 15px;
+}
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+      cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    // background-color: #008CBA;
+ background-color: rgb(138, 137, 137);
+ color: white
+   
+  }
+  
+  .details-wrapper:hover .overlay {
+    opacity: 0.5;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  

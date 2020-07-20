@@ -1,0 +1,92 @@
+<!-- <button (click)="reloadList(true)">reload</button><button (click)="reloadList()">reload with ghost</button> -->
+<div class="content" *ngFor="let content of courseContent" >
+  <br>
+  <div *ngIf='users$ | async as users'>
+    <div class="row">
+      <div  class="searchBar"><div class="input-group">
+          <input type="text" class="form-control" placeholder="Search Course Content" name="search">
+          <div class="input-group-append">
+              <button class="btn" type="submit" style="background-color: #007791"><i class="fa fa-search" style="box-shadow: none;color: white"></i></button>
+          </div>
+      </div></div>
+      <div class="col-md-6" *ngIf="!parentvalue && !unsubcourseValue" >
+        <div class="row">
+            <div class="col-md-4"><button type="button" class="btn btn-link" (click)="downloadPDF()">Current Section</button></div>
+            <div class="col-md-4"><button type="button" class="btn btn-link">All Sections</button></div>
+            <div class="col-md-4"><button type="button" class="btn btn-link">All Resources</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div style="margin-bottom:5px" *ngFor="let x of content.contents;">
+    <div *ngIf='users$ | async as users'>
+      <mat-accordion style="margin-bottom:5px">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header [collapsedHeight]="'70px'" [expandedHeight]="'70px'">
+            <mat-panel-title>
+              <div class="row" style="width:100%; margin-left:0px !important">
+                <div class="col-md-8"> Section: {{x.section}}</div>
+                <div class="col-md-4"> <span class="pull-right"> {{x.seen}}/ {{x.content.length }}</span></div>
+                <div class="col-md-8"> <strong>{{x.name}}</strong> </div>
+              </div>
+              <!-- <div class="row">
+                 
+              </div> -->
+
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+
+          <mat-panel-description *ngFor="let data of x.content;let i=index">
+            <ul class="list-group heroes">
+
+<!-- <h4>{{data.url}}</h4> -->
+              <li class="list-group-item"  (click)="clickvideo(data.id,content.course_id,x.section,data.type,data.url)">
+                <div class="row " style="width:100%;margin: 0px">
+                  <div class="col-md-2 test" style="text-align:left;width:15%;">
+                    <i *ngIf="data.type=='video'" class="fa fa-play-circle-o "></i>
+                    <i *ngIf="data.type=='pdf'" class="fa fa-file-pdf-o"></i>
+                    <i *ngIf="data.type=='text'" class="fa fa-file-text-o"></i>
+                    <i *ngIf="data.type=='ppt'" class="fa fa-file-powerpoint-o"></i>
+                  </div>
+                  <div class="col-md-6" style="text-align:left;width:55%" *ngIf="data.type=='pdf'" >
+                    <h6>{{data.name}}</h6>
+                  </div>
+                  <div class="col-md-6" style="text-align:left;width:55%" *ngIf="data.type=='text'">
+                    <a [href]="fileUrl" download="file.txt">java program.txt</a>
+                  </div>
+                  <div class="col-md-6" style="text-align:left;width:55%" *ngIf="data.type=='video'">{{data.chapter_no}}. {{data.name}}
+                  </div>
+                  
+                  <div class="col-md-2 ml" style="text-align:left;width:15%" *ngIf="data.type=='video'">{{data.time}} </div>
+
+                  <div class="col-md-2 mr" style="text-align:right;width:15%" *ngIf = "!unsubcourseValue">
+
+                    <div class="round" style="float:right;margin: 0px" *ngIf="data.type=='video'">
+                      <input type="checkbox" [(ngModel)]="data.seen" />
+
+                      <!-- <div class="checkbox"> <input type="checkbox" name="checkbox-list" [(ngModel)]="num.checked" (click)="clicked(num)" ngDefaultControl/> -->
+                      <label for="checkbox" ></label>
+                    </div>
+                  </div>
+
+
+                </div>
+              </li>
+
+
+            </ul>
+          </mat-panel-description>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </div>
+  </div>
+
+  <app-course-ghost *ngIf="!useSpinner" [ghosts]="ghosts" [@fadeOut]="!ghosts.length" fxLayout="row wrap"></app-course-ghost>
+  <!-- <mat-spinner class="spinner" *ngIf="ghosts.length && useSpinner"></mat-spinner> -->
+</div>
+

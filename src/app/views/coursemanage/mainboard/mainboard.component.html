@@ -1,0 +1,185 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-dark sticky-top" style="z-index: 1;">
+    <div class="row" style="width: 100%">
+      <div class="col-md-2">
+          <img  class="imgcourse" src="assets/placeholder.png">
+      </div>
+      <div class="col-md-4">
+        <a class="navbar-brand" style="color:#000000" href="#">{{course.course_name}}</a>
+        <div>
+          by <h6> {{course.author[0].name}} </h6>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="pull-right">
+          <i class="icon-settings icons font-2xl d-block mt-4" routerLink="./settings"></i>
+        </div>
+      </div>
+  
+  
+  
+    </div>
+  </nav>
+  <div class="row rowstyle">
+    <div class="col-md-3 mat-card" style="background-color:#f2f5f4;">
+      <div id="user-short">
+        <div class="sidemenufont menu">
+          <ul style="list-style-type: none;">
+            <p> <b>Plan your course</b> </p>
+            <a routerLink="/coursemanage">
+              <li class="{{activeclass1}}">
+                Traget Your Students
+              </li>
+            </a>
+            <a routerLink="./course-structure">
+              <li class="{{activeclass2}}">
+                Course Structure
+              </li>
+            </a>
+            <a routerLink="./setup">
+              <li class="{{activeclass3}}">
+                Setup & Test Video
+              </li>
+            </a>
+            <p> <b>Create your content</b> </p>
+  
+            <a routerLink="./film">
+              <li class="{{activeclass4}}" >
+                Film & Edit
+              </li>
+            </a>
+            <a routerLink="./curriculum">
+              <li class="{{activeclass5}}">
+                Curriculum
+              </li>
+            </a>
+            <a routerLink="./caption">
+              <li class="{{activeclass6}}">
+                Captions (optional)
+              </li>
+            </a>
+            <p> <b>Publish your course</b> </p>
+            <a routerLink="./basic">
+              <li class="{{activeclass7}}">
+                Course Landing Page
+              </li>
+            </a>
+  
+            <a routerLink="./price">
+              <li class="{{activeclass8}}" >
+                Price & Coupons
+              </li>
+            </a>
+            <a routerLink="./comunication">
+              <li class="{{activeclass9}}" >
+                Communications
+              </li>
+            </a>
+          </ul>
+        </div>
+        <button aria-pressed="true" data-toggle="modal" (click)="myModal1.show()" class="btn btn-block btn-danger active"
+        type="button">Submit for Review</button>
+      </div>
+    </div>
+    <div class="col-md-9" style="padding-right:0px !important;padding-left:5px !important;">
+      <mat-card style="min-height: 618px">
+        <mat-card-content>
+          <router-outlet></router-outlet>
+        </mat-card-content>
+      </mat-card>
+  
+    </div>
+  </div>
+  
+  
+  
+  <div bsModal #myModal1="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModal1Label"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" *ngIf="submit">Before submitting, please complete the verification process</h4>
+          <h4 class="modal-title" *ngIf="verify1">Step 1 of 2: Identify your ownership rights to the course content</h4>
+          <h4 class="modal-title" *ngIf="verify2">Step 2 of 2: Submit a video</h4>
+  
+          <i class="fa fa-close" (click)="myModal1.hide()"></i>
+        </div>
+        <div class="modal-body" *ngIf="submit">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="">To maintain the trust and safety of the Udemy marketplace, you must verify your identity
+                before your course can be submitted for review. This process only takes a few minutes.
+                Thank you in advance for helping us maintain the integrity of our learning community.</label>
+            </div>
+            <div style="text-align:center">
+              <button aria-pressed="true" class="btn btn-sm-block btn-danger active" type="button" (click)="verify1=true;submit=false;verify2=false;">Start
+                verification process</button>
+            </div>
+           
+          </div>
+        </div>
+        <div class="modal-body" *ngIf="verify1">
+          <div class="card-body">
+            <div class="form-group">
+              <P>Please select one of the options below.</P>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="survey" id="Radios1" value="Yes">
+                  I created most or all of the content of this course, and I have
+                  properly secured all of the rights necessary to publish all of the
+                  content of this course on Einston EDU.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="survey" id="Radios2" value="No">
+                  I am a person or company publishing this course through either
+                  partnership, contract, or employment with the creator of most or all
+                  of the content of this course, and I have properly secured all of
+                  the rights necessary to publish all of the content of this course on
+                  Einston EDU.
+                </label>
+              </div>
+              <p>
+                Please be aware, we do not allow persons or companies with private label rights to resell content that
+                they purchased from a content owner on EnstonEDU.</p>
+            </div>
+            <div class="row" style="float:right">
+              
+                <button aria-pressed="true" class="btn btn-sm-block btn-sm active float-right" type="button" (click)="verify1=false;submit=true;verify2=false;">Back</button>
+                <button aria-pressed="true" class="btn btn-sm-block btn-sm btn-danger active float-right" type="button"
+                (click)="verify1=false;submit=false;verify2=true;">Continue</button>
+             
+            </div>
+          </div>
+        </div>
+        <div class="modal-body" *ngIf="verify2">
+          <div class="card-body">
+            <div class="form-group">
+              Please submit a video to verification@udemy.com claiming either ownership of the content or that you have
+              obtained the necessary rights to use the content you are publishing.
+  
+              In the video, you must show your face & state the following <br>
+  
+              1. Your full legal name <br>
+              2. The name of the course(s) you are publishing <br>
+              3. Statement of ownership or rights to use the content below <br>
+  
+              In the body of the email, please include all of the above in written form.
+            </div>
+            <div class="row" style="float:right">
+            
+                <button aria-pressed="true" class="btn btn-sm-outline btn-sm active float-right" type="button" (click)="verify1=true;submit=false;verify2=false;">Back</button>
+                <button aria-pressed="true" class="btn btn-sm-block btn-sm btn-danger active float-right" type="button" (click)="sendMail()">Submit
+                  verification video</button>
+             
+            </div>
+          </div>
+        </div>
+  
+  
+        
+      </div>
+      <!--/.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>

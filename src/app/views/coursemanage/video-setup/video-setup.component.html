@@ -1,0 +1,342 @@
+<div class="container">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-2"><img src="assets/einston.svg" height="50px" alt=""></div>
+        <div class="col-md-10"><button class="astext" routerLink="../">Exit</button></div>
+      </div>
+    </div>
+  
+  
+    <div class="card-body">
+      <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <ng-template matStepperIcon="edit">
+          <mat-icon><img src="assets\img\check.png" style="width:15px;padding-bottom: 28px;" alt="done"></mat-icon>
+        </ng-template>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel> <span matTooltip=" Select Language"> Select Language</span></ng-template>
+            <div style="text-align:center">
+                <div>
+                  <h4> <b>What language will you speak in your test video?</b> </h4>
+                  <p>Feedback on tone and delivery is available in some languages, while audio and video quality checks are available in all languages.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                <label>Select One</label>
+                <select class="form-control">
+                  <option>English</option>
+                  <option>Deutsch</option>
+                  <option>Italino</option>
+                </select>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div>
+  
+              <button class="nextbtn" mat-button matStepperNext>Next</button>
+  
+  
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel> <span matTooltip="Feedback Type "></span>Feedback Type </ng-template>
+            <div style="text-align:center">
+                <div>
+                  <h4> <b>What feedback will be helpful?</b> </h4>
+                </div>
+                <br>
+                <div>
+                  <h6>We can provide tips for multiple aspects of your video. Students value both your filming quality and on-screen presence! </h6>
+                </div>
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6" style="margin-left: 7%;margin-top:2%">
+                      <div class="input-group">
+                          <div class="form-group">
+                            <div class="answer-choice   boxed radio">
+                              <label title="">
+                                <input  type="checkbox" ><span>&nbsp;&nbsp;
+                                  <span class="answer-label">Video Production</span>
+                                </span>
+                              </label>
+                            </div>
+                            <div class="answer-choice   boxed radio">
+                                <label title="">
+                                    <input  type="checkbox" ><span>&nbsp;&nbsp;
+                                      <span class="answer-label">Audio Production</span>
+                                    </span>
+                                  </label>
+                            </div>
+                            <div class="answer-choice   boxed radio">
+                                <label title="">
+                                    <input  type="checkbox" ><span>&nbsp;&nbsp;
+                                      <span class="answer-label">Delivery</span>
+                                    </span>
+                                  </label>
+                            </div>
+                          </div>
+              
+              
+                        </div>
+      
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
+                
+      
+      
+              </div>
+              <div>
+                  <button class="backbtn" mat-button matStepperPrevious>Back</button>
+                  <button class="nextbtn" mat-button matStepperNext>Next</button>
+                </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+          <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel> <span matTooltip="videoType">VideoType</span> </ng-template>
+            <div style="text-align:center">
+                <div>
+                  <h4> <b>What are you filming for the test video?</b> </h4>
+                </div>
+                <br>
+                <div>
+                  <h6>You can try out different filming methods in one video or test each individually, but we can only review one video at a time.</h6>
+                </div>
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6" style="margin-left: 7%;margin-top:2%">
+                      <div class="input-group">
+                          <div class="form-group">
+                            <div class="answer-choice   boxed radio">
+                              <label title="">
+                                <input  type="checkbox" ><span>&nbsp;&nbsp;
+                                  <span class="answer-label">I am filming myself or another person  </span>
+                                </span>
+                              </label>
+                            </div>
+                            <div class="answer-choice   boxed radio">
+                                <label title="">
+                                    <input  type="checkbox" ><span>&nbsp;&nbsp;
+                                      <span class="answer-label">I am filming my computer screen </span>
+                                    </span>
+                                  </label>
+                            </div>
+                            <div class="answer-choice   boxed radio">
+                                <label title="">
+                                    <input  type="checkbox" ><span>&nbsp;&nbsp;
+                                      <span class="answer-label">I am filming an activity (e.g. yoga, dog training, cooking)</span>
+                                    </span>
+                                  </label>
+                            </div>
+                          </div>
+              
+              
+                        </div>
+      
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
+                
+      
+      
+              </div>
+            <div>
+              <button class="backbtn" mat-button matStepperPrevious>Back</button>
+              <button class="nextbtn" mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="fourthFormGroup">
+            <form [formGroup]="fourthFormGroup">
+              <ng-template matStepLabel> <span matTooltip="equipment">Equipment</span> </ng-template>
+              <div>
+                  <div style="text-align:center">
+                    <h4> <b>What are you using to record?</b> </h4>
+                  </div>
+                  <br>
+                  <div  style="text-align:center">
+                    <h6>Knowing this helps us troubleshoot issues, but if you aren't sure, select "I don't know."</h6>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-4" style="margin-left: 7%;margin-top:2%">
+                        <div class="input-group">
+                            <div class="form-group">
+                              <div>
+                                <label>Microphone type</label>
+                                <select class="form-control">
+                                    <option disabled>Select one</option>
+                                  <option *ngFor="let micro of microphone">{{micro}}</option>                             
+                                </select>
+                              </div>
+                            </div>
+                            <br>
+                              <div class="form-group">
+                              <div>
+                                  <label>Camera type</label>
+                                  <select class="form-control">
+                                      <option disabled>Select one</option>
+                                    <option *ngFor="let cam of camera">{{cam}}</option>                             
+                                  </select>
+                                </div>
+                              </div>
+                              <br>
+                              <div class="form-group">
+                                  <div>
+                                      <label>Software type</label>
+                                      <select class="form-control">
+                                          <option disabled>Select one</option>
+                                        <option *ngFor="let soft of software">{{soft}}</option>                             
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <br>
+                                  <div class="form-group">
+                                      <div>
+                                          <label>Operating System</label>
+                                          <select class="form-control">
+                                              <option disabled>Select one</option>
+                                            <option *ngFor="let soft of software">{{soft}}</option>                             
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <br>
+                           
+                
+                
+                          </div>
+        
+                    </div>
+                    <div class="col-md-3"></div>
+                  </div>
+                  
+        
+        
+                </div>
+              <div>
+                <button class="backbtn" mat-button matStepperPrevious>Back</button>
+                <button class="nextbtn" mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="fifthFormGroup">
+              <form [formGroup]="fifthFormGroup">
+                <ng-template matStepLabel> <span matTooltip="tips">Tips</span> </ng-template>
+                <div >
+                    <div style="text-align:center">
+                      <h4> <b>Tips to look like a pro</b> </h4>
+                    </div>
+                    <br>
+                    <div style="text-align:center">
+                      <h6>Based on your answers, you'll find these videos useful. Next, it's time to film!</h6>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3"></div>
+                      <div class="col-md-4" style="margin-left: 7%;margin-top:2%">
+                          <div>
+                            <label>Video: Tips for your filming type</label>
+                            <video width="320" height="240" controls>
+                                <source  src="/assets/vido/tips_video.mp4" type="video/mp4">
+                            </video>
+                          </div><br>
+                          <div>
+                              <label>Audio: Fix common audio issues</label>
+                              <video width="320" height="240" controls>
+                                  <source  src="/assets/vido/test_video.mp4" type="video/mp4">
+                              </video>
+                            </div><br>
+                            <div>
+                                <label>Tone & delivery: Put your personality forward</label>
+                                <video width="320" height="240" controls>
+                                    <source  src="/assets/vido/tips_video.mp4" type="video/mp4">
+                                </video>
+                              </div>
+          
+                      </div>
+                      <div class="col-md-3"></div>
+                    </div>
+                    
+          
+          
+                  </div>
+                <div>
+                  <button class="backbtn" mat-button matStepperPrevious>Back</button>
+                  <button class="nextbtn" mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+        <mat-step>
+          <ng-template matStepLabel> <span matTooltip="Upload" aria-label="Button that displays a tooltip when focused or hovered over">Upload</span>
+          </ng-template>
+          <div >
+            <div style="text-align:center">
+              <h4> <b>Lights, camera, action!</b> </h4>
+            </div>
+            <!-- <div class=col-md-6>
+             
+            </div> -->
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">   
+                  <h6>You've got this! Create a video now and remember that it doesn't have to be perfect. Film for 1-3 minutes.</h6>         
+                <div>
+                  <video width="320" height="240" controls>
+                    <source src="/assets/vido/tips_video.mp4" type="video/mp4">
+                  </video>
+                </div><br>
+                <div>
+                  <p>Talk about anything you want, or use one of our prompts:</p>
+                  <ol>
+                    <li>Teach a simple task</li>
+                    <li>Explain why you're passionate about something</li>
+                    <li>Describe an object or feature and its use</li>
+                  </ol>
+                </div>
+                <div>
+                  <p><b>Upload your test video</b></p>
+
+                  <div class="file-uploader--file-selector--SGCns">
+                    <label for="file-upload-36--5">
+                      <span class="input-group">
+                        <input type="text" class="form-control" [value]='filname'>
+                        <span class="input-group-btn">
+                          <button type="button" (click)="file.click()"  class="btn btn-secondary">Select video</button></span></span></label>
+                          <input (change)="detectFiles($event)" name="asset" id="get_file" type="file" class="" #file ></div>
+                </div>
+               <!-- <div>
+                <div> FileName:{{files.name}} 
+                  <p>Uploaded</p>
+                </div>
+               </div> -->
+          <div>
+            
+          </div>
+          
+                
+  
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+            
+  
+  
+          </div>
+  
+          <div>
+            <button class="backbtn" mat-button matStepperPrevious>Back</button>
+            <!-- <button class="nextbtn" mat-button (click)="stepper.reset()">Reset</button> -->
+            <button class="nextbtn" mat-button >Submit for feedback</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+  
+    </div>
+  
+  
+  </div>

@@ -1,0 +1,49 @@
+<div class="container">
+  <br>
+  <div class="row">
+      <h5><a routerLink="../../q&a">Back to All Questions</a></h5>
+    </div>
+</div>
+
+<mat-card style="margin: 2px">
+    <div class="row" *ngFor="let faq of faqsComments">
+        <div class="col-md-9" style="display: flex"  >
+            <img class="image" src="assets/img/avatars/1.jpg" alt="">&nbsp;&nbsp;&nbsp;
+            <div>
+                <div>
+                    hello
+                </div>
+                <div><a [routerLink]="[ '/path', routeParam ]">Jhonson</a>&nbsp;: 3 days ago</div>
+                <div>{{faq.faq_data}}</div>
+                <br>
+                <div><button mat-raised-button color="primary">Follow Responses</button></div>
+                <br>
+                <div class="row">
+                  <div ><img class="image"  src="assets/img/avatars/6.jpg" alt=""></div> &nbsp;&nbsp;&nbsp;
+                  <div style="padding-top:4%;width: 85%">
+                    <input type="text" class="form-control" placeholder="Add an answer">
+                  </div>
+                </div>
+            </div>
+           
+        </div>
+        
+        <div class="col-md-3">
+            <div class="pull-right">
+                <div style="text-align: left">
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>more_vert</mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                        <button mat-menu-item class="btn btn-default">
+                          <i class="fa fa-flag"></i>&nbsp;Report abuse
+                        </button>
+                      </mat-menu>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</mat-card>
+

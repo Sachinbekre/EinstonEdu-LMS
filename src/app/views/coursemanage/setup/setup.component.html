@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Setup & test video</h5>
+  </div>
+  <div class="card-body">
+    <div class="row" style="background-color: #e4e5e6;padding: 3%">
+      <div class="col-md-6">
+        <h4>Arrange your ideal studio and get early feedback</h4>
+        <div>
+          <p>It's important to get your audio and video set up correctly now, because it's much more difficult to fix your videos after you’ve recorded. There are many creative ways to use what you have to create professional looking video.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <mat-card style="text-align: center">
+          <div><img src="assets/TestVideo.png" alt=""></div>
+          <div>
+            <h5>Free expert video help</h5>
+          </div>
+          <p>Get personalized advice on your audio and video</p>
+          <div><button mat-button class="btn btn-danger" routerLink="../test-video">Create a test video</button></div>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="tips">
+        <i class="fa fa-lightbulb-o fa-2x" style="color: blue"></i>&nbsp;&nbsp; <h5>Tips</h5>
+        <br>
+      </div>
+      <div *ngFor="let content of filmEdit.tips" style="padding-left: 30px">
+        <h6>{{content.heading}}</h6>
+        <p>{{content.content}}</p>
+      </div>
+    </div>
+    <div class="">
+      <div class="tips">
+        <i class="fa fa-exclamation-circle fa-2x" style="color: blue"></i>&nbsp;&nbsp; <h5>Requirements</h5>
+      </div>
+      <div *ngFor="let req of filmEdit.requirements" style="padding-left: 30px">
+        <li>{{req.content}}</li>
+      </div>
+    </div>
+    <div class="row">
+      <div class="tips">
+        <i class="icon icon-book-open font-xl" style="color: blue"></i>&nbsp;&nbsp; <h5>Resources</h5>
+      </div>
+    </div>
+    <div *ngFor="let content of filmEdit.resources" style="padding-left: 30px">
+        <a href="" target="_blank">{{content.links}}</a>
+        <p>{{content.text}}</p>
+    </div>
+  </div>
+</div>

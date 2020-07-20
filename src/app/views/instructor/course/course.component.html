@@ -1,0 +1,49 @@
+<div>
+    <mat-card>
+      <div class="filter-teach">
+        <div class="search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="search">
+            <div class="input-group-append">
+              <button class="btn btn-danger" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="sort">
+          <label>SortBy </label>&nbsp;&nbsp;&nbsp;
+          <select class="form-control form-control-sm">
+            <option value=""> Date Created - Newest </option>
+            <option value=""> Title A-Z </option>
+            <option value=""> Title Z-A </option>
+            <option value=""> Published No-Yes </option>
+            <option value=""> Published Yes-No</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="card details-wrapper " *ngFor="let info of instructor">
+          <div class="row">
+            <img [src]="info.image" class="imgcourse">
+            <div class="col-md-4 details-data">
+              <label> <b>{{info.courseName}}</b></label>
+              <p>{{info.instructorName}}</p>
+              <div><b>{{info.courseStatus}}</b> <span class="pull-right">{{info.courseFee}}</span></div>
+            </div>
+            <div class="col-md-6 details">
+              <div class="details-label">
+                <div><label>Published Curriculum Items</label></div>
+                <div> <label class="detail-limit">{{info.courseItemToatl}}</label></div>
+                <div><label>Total(550 Max)</label></div>
+                <div> <label class="detail-limit">{{info.courseItemToatl}}</label></div>
+              </div>
+            </div>
+            <div class="overlay" routerLink="/coursemanage">
+              <div class="text">
+                <h4 >Go to course management</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+   </div>

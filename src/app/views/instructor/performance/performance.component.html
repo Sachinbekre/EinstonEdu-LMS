@@ -1,0 +1,42 @@
+<mat-card>
+<div>
+  <h4>    Performance  </h4>
+  <div class="row">
+    <div class="col-md-3">
+        <div class="vertical-menu">
+            <a  class="{{activeclass1}}"  routerLink="/instructor/performance"  >Overview</a>
+            <a  class="{{activeclass2}}" routerLink="student">Students</a>
+            <a  class="{{activeclass3}}" routerLink="engagement">Course Engagement</a>
+            <a  class="{{activeclass4}}" routerLink="conversion">Traffic & Conversion</a>
+          </div>
+    </div>
+    <div class="col-md-9">
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+ 
+   
+</div>
+</mat-card>
+
+<!-- ex -->
+<!-- <mat-card>
+    <div>
+      <h4>    Performance  </h4>
+      <div class="row">
+        <div class="col-md-3">
+            <div class="vertical-menu">
+                <a  (click)="overview();" [class.active]="overviewData" routerLink="overview"  >Overview</a>
+                <a (click)="student();" [class.active]="studentData" routerLink="./" class="active">Students</a>
+                <a (click)="engagement();" [class.active]="engagementData" routerLink="engagement">Course Engagement</a>
+                <a (click)="conversion();" [class.active]="conversionData"  routerLink="conversion">Traffic & Conversion</a>
+              </div>
+        </div>
+        <div class="col-md-9">
+            <router-outlet></router-outlet>
+          </div>
+      </div>
+     
+       
+    </div>
+    </mat-card> -->

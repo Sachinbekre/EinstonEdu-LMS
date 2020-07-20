@@ -1,0 +1,159 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Course landing page</h5>
+    </div>
+    <div class="card-body mediaPrepend">
+        <label> <b>Course Title</b> </label>
+        <div class="card-body mediaPre">
+            <form #userForm="ngForm" appIdentityRevealed>
+                <div class="form-group">
+
+                    <input type="text" id="hline" name="hline" class="form-control" [(ngModel)]="user.hline" #hline="ngModel"
+                        class="form-control" class="form-control" placeholder="Insert your course title" required />
+
+                    <div *ngIf="hline.invalid && (hline.dirty || hline.touched)" class="alert alert-danger">
+                        <div *ngIf="hline.errors.required">
+                            Headline is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <input type="text" id="sline" name="sline" class="form-control" [(ngModel)]="user.sline" #sline="ngModel"
+                        class="form-control" class="form-control" placeholder="Insert your course subtitle" required />
+
+                    <div *ngIf="sline.invalid && (sline.dirty || sline.touched)" class="alert alert-danger">
+                        <div *ngIf="sline.errors.required">
+                            Headline is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body mediaPre">
+                    <label for=""> <b>Biography: </b> </label>
+                    <quill-editor [(ngModel)]="content" name="quill"></quill-editor>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group"><label for="locale" class="sr-only control-label">Course locale</label>
+                            <div class="form-control-single-select-container">
+                                <select title="locale" id="locale" class="form-control">
+                                    <option value="en_US">English (US)</option>
+
+                                    <option value="af_ZA">Afrikaans</option>
+
+                                    <option value="bn_IN">Bangla</option>
+
+                                    <option value="en_IN">English (India)</option>
+                                    <option value="en_GB">English (UK)</option>
+
+                                    <option value="hi_IN">हिन्दी</option>
+
+                                    <option value="kn_IN">Kannaḍa</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group"><label for="instructional_level" class="sr-only control-label">Course
+                                instructional
+                                level</label>
+                            <div class="form-control-single-select-container"><select title="instructional_level" id="instructional_level"
+                                    class="form-control">
+                                    <option value="-1">-- Select Level --</option>
+                                    <option value="1">Beginner Level</option>
+                                    <option value="2">Intermediate Level</option>
+                                    <option value="3">Expert Level</option>
+                                    <option value="0">All Levels</option>
+                                </select></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-control-single-select-container"><select title="category" id="category" class="form-control">
+                                <option value="-1">-- Select Category --</option>
+                                <option value="288">Development</option>
+                                <option value="268">Business</option>
+                                <option value="294">IT &amp; Software</option>
+                                <option value="292">Office Productivity</option>
+                                <option value="296">Personal Development</option>
+                                <option value="269">Design</option>
+                                <option value="290">Marketing</option>
+                                <option value="274">Lifestyle</option>
+                                <option value="273">Photography</option>
+                                <option value="276">Health &amp; Fitness</option>
+                                <option value="278">Music</option>
+                                <option value="300">Teaching &amp; Academics</option>
+                            </select></div>
+                    </div>
+                    <div class="col-md-3">
+                        <select title="subcategory" id="subcategory" class="form-control">
+                            <option value="-1">-- Select Subcategory --</option>
+                            <option value="8">Web Development</option>
+                            <option value="10">Mobile Apps</option>
+                            <option value="12">Programming Languages</option>
+                            <option value="14">Game Development</option>
+                            <option value="16">Databases</option>
+                            <option value="18">Software Testing</option>
+                            <option value="20">Software Engineering</option>
+                            <option value="362">Development Tools</option>
+                            <option value="354">E-Commerce</option>
+                        </select>
+                    </div>
+                </div>
+                <span>What is <strong>primarily</strong> taught in your course? <i class="fa fa-info-circle fa-lg mt-4"
+                        matTooltip='Each individual topic chosen should comprehensively describe your course'></i></span>
+                <br>
+                <div class="form-group">
+
+                    <input type="text" id="sline" name="sline" class="form-control" [(ngModel)]="user.sline" #sline="ngModel"
+                        class="form-control" class="form-control" placeholder="E.g. Landscape Photography" />
+                </div>
+                <br>
+                <label> <b>Course Image</b> </label>
+                <app-image-crop></app-image-crop>
+                <br>
+                <label> <b>Promotional Video</b> </label>
+                <div>
+                    <!-- <app-player></app-player> -->
+                    <app-video-player></app-video-player>
+                </div>
+                <br>
+                <div>
+                    <label> <b>Instructor Profile(s)</b> </label>
+                    <mat-card style="padding:10px">
+                        <div role="alert1" class="with-icon alert1 alert-danger">
+                            <span><i class="fa fa-warning"></i></span>
+                            <div class="content">All visible instructors of this course must complete their profile
+                                before the course can be published. This includes name, image, and a short summary of
+                                your
+                                background 50 words minimum.</div>
+                        </div>
+                    </mat-card>
+                </div>
+                <br>
+                <div>
+                    <label> <b>Instructor Profile(s)</b> </label>
+                    <mat-card style="padding:10px">
+                        <div role="alert1" class="with-icon alert1 alert-danger">
+                            <span><i class="fa fa-warning"></i></span>
+                            <div class="fx-c">
+                                <div class="user-avatar user-avatar--initials " style="width: 90px; font-size: 56px;">
+                                    <div class=" fx-c">
+                                        <span *ngIf="!user1.avatar" class="user-initials">{{user1.first_name.charAt(0)}}
+                                        </span>
+                                        <img *ngIf="user1.avatar" class="avatar" src="{{user1.avatar}}" alt="" height="100%"
+                                            width="100%">
+
+                                    </div>
+                                </div>
+                                <span> {{user1.first_name}} {{user1.last_name}} </span>
+                            </div>
+                            <div class="content">Your instructor biography must have at least 50 words.
+                                <a href="#"> Update your profile</a>.</div>
+                        </div>
+                    </mat-card>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

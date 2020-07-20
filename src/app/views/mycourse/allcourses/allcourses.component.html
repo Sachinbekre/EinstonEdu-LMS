@@ -1,0 +1,107 @@
+<div class="content" style="margin-left: 2%">
+  <div class="Coursefilter" *ngIf='users$ | async as users'>
+    <div class="row">
+      <div class="col-md-3">
+        <b>Sort By</b>
+        <select name="" id="" class="form-control">
+          <option value="">Recently Accesed</option>
+          <option value="">Recently Enrolled</option>
+          <option value="">Title: A-to-z</option>
+          <option value="">Title: Z-to-A</option>
+          <option value="">Completion: 0%-to-100%</option>
+          <option value="">Title: 100%-to-0%</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <b>Filter by</b>
+        <select name="" id="" class="form-control">
+          <option value="">Favorites</option>
+          <option value="">Business</option>
+          <option value="">Development</option>
+          <option value="">IT & Software</option>
+          <option value="">Teaching & Academics</option>
+          <option value="">Archived</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <br>
+        <select name="" id="" class="form-control">
+          <option value="">In Progress</option>
+          <option value="">Not Started</option>
+          <option value="">Completed</option>
+
+        </select>
+      </div>
+      <div class="col-md-3">
+        <br>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search my courses" name="search">
+          <div class="input-group-append">
+            <button class="btn btn-danger" type="submit"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf='users$ | async as users'>
+
+    <div *ngFor="let list of courseList" style="margin: 1%">
+      <mat-card style="padding: 0px">
+        <div class="mycourses">
+          <div class="imageAngular ">
+
+            <img [src]="list.img" alt="Angular Crash Course for Busy Developers" style="width:100%;max-height: 130px">
+            <!-- <button class="collection dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"  ></i></button> -->
+            <button class=" collection" type="button" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right m-0" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Instructor Collection</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Share</a>
+              <a class="dropdown-item" href="#">Create new collection</a>
+              <a class="dropdown-item" href="#">Favorite</a>
+              <a class="dropdown-item" href="#">Archived</a>
+            </div>
+            <div class="middle">
+              <div style="display:inline-block;position:relative;"><img class="text" src="assets\img\play.png" alt="">
+
+              </div>
+            </div>
+
+
+          </div>
+          <div class="courseDetails">
+            <div class="details">
+              <h6>{{list.courseTitle}}</h6>
+            </div>
+            <div>
+              <p>{{list.author}}</p>
+            </div>
+            <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+            <div class="coursecomplete" style="display: flex">
+              <div>{{list.completed}}% Complete</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+              </div>
+
+
+
+            </div>
+            <div class="pull-right">
+              <div class="rate-btn">
+                <span id="one">Your Rating</span>
+                <span id="two">Edit Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <app-allcourse-ghost [ghosts]="ghosts" [@fadeOut]="!ghosts.length" fxLayout="row wrap"></app-allcourse-ghost>
+</div>

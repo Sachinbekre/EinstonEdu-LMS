@@ -1,0 +1,98 @@
+<div class="content">
+    <div class="questons" *ngIf="!comments">
+      <br>
+      <div *ngIf='users$ | async as users'>
+        <mat-card>
+          <div class="row">
+            <div class="searchBar">
+              <input type="text" class="form-control" placeholder="Search for a question">
+            </div>
+            <div class="searchBtn">
+              <span class="pull-right">
+                <button mat-raised-button class="btn btn-danger" (click)="comments=true">Ask a new question</button>
+              </span>
+            </div>
+          </div>
+        </mat-card>
+    
+        <br>
+        <div class="row" style="width: 100%" *ngIf="!qandacomp">
+          <div class="col-md-3"><select name="" id="" class="form-control">
+              <option value="">Sort by popular</option>
+              <option value="">Sort by recency</option>
+            </select>
+          </div>
+          <div class="col-md-9">
+            <span class="pull-right" style="font-size: 16px">
+              <mat-checkbox>See question i'm following</mat-checkbox>&nbsp;
+              <mat-checkbox>See question without responses</mat-checkbox>
+            </span>
+          </div>
+        </div>
+        <br>
+        <div class="card" *ngIf="!qandacomp">
+          <div *ngFor="let user of faqs_questions">
+            <mat-card style="margin: 2px">
+              <div class="row">
+                <div class="col-md-9" style="display: flex" (click)="edit(user.faq_id)">
+                  <img class="image" src="{{user.userAvatar}}" alt="">&nbsp;&nbsp;&nbsp;
+                  <div>
+                    <div>
+                      <h6>{{user.faq_title}}</h6>
+                    </div>
+                    <div>{{user.faq_data}}</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="pull-right">
+                    <div style="text-align: center">
+                      <h5>{{user.faq_comments}}</h5>
+                    </div>
+                    <div>Responses</div>
+                  </div>
+                </div>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="postQuetion" *ngIf="comments">
+      <h5>Have a technical issue? Our <a [routerLink]="[ '/path', routeParam ]">Support Team</a> can help.</h5>
+  
+      <div>
+        <input type="text" class="form-control" placeholder="Question title">
+      </div>
+  
+      <br>
+      <div class="">
+        <!-- <div class="col-md-12"> -->
+          <!-- <div class="toolbar" role="toolbar">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-light"><span class="fa fa-bold"></span></button>
+                    <button type="button" class="btn btn-light"><span class="fa fa-italic"></span></button>
+                    <button type="button" class="btn btn-light"><span class="fa fa-underline"></span></button>
+                    <button type="button" class="btn btn-light"><span class="fa fa-link"></span></button>
+                    <button type="button" class="btn btn-light"><span class="fa fa-image"></span></button>
+                </div>
+            </div> -->
+  
+          <div class="animated fadeIn">
+            <div class="card"> 
+              <div class="card-body">
+                <quill-editor ></quill-editor>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Post Question</button>
+            &nbsp;&nbsp;
+            <button type="submit" class="btn btn-danger" (click)="comments=false">Cancel</button>
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
+    <app-qa-ghost *ngIf="!useSpinner" [ghosts]="ghosts" [@fadeOut]="!ghosts.length" fxLayout="row wrap"></app-qa-ghost>
+    <!-- <app-ga-ghost ></app-ga-ghost> -->
+  </div>

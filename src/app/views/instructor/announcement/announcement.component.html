@@ -1,0 +1,95 @@
+
+<div class="container">
+  <div class="card-header">
+      <div _ngcontent-c0="" class="row">
+        <h3 >Create Announcement</h3>
+    <button class="btn btn-primary pull-right"  routerLink="/instructor/course" style="margin-left: auto;">Back </button></div>
+    </div>
+    
+<div class="card" style="margin:1%">
+<div class="card-body">
+  <div class="col-md-8" style="padding-left: 4%;">
+    <div class="input-group" style="        margin-bottom: 2%;    ">
+      <label> Type </label>&nbsp;&nbsp;&nbsp;&nbsp;
+      <select class="form-control col-md-3">
+        <option>Educational</option>
+        <option>Promotional</option>
+      </select>
+    </div>
+    <div>
+      <h6>Recipients</h6>
+      <h6>Include students who are enrolled in one of these courses</h6>
+    </div>
+    <div style="    margin-bottom: 3%;">
+      <label><a>Select all eligible courses</a></label>
+      <input type="text" placeholder="Search for eligible courses" class="form-control">
+    </div>
+    <div style="    margin-bottom: 3%;">
+      <label>Exclude students who are enrolled in one of these courses</label>
+      <input type="text" placeholder="Search for eligible courses" class="form-control">
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label style="              margin-bottom: 5%;          ">Include students who enrolled between</label>
+        <div class="form-group">
+
+          <div class="input-group" style="            margin-bottom: 8%;            margin-top: 3%;
+        ">
+            <label>Start Date</label>
+            <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker>
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>End Date</label>
+            <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker>
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label style="    margin-bottom: 5%;">Include students who have progressed</label>
+        <div class="input-group">
+          <input type="checkbox" checked>
+          <label>0% (Not started)</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" checked>
+          <label>1-49%</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" checked>
+          <label>50-99%</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" checked>
+          <label>100% (Completed)</label>
+        </div>
+
+      </div>
+    </div>
+    <div style="    margin-bottom: 3%;">
+      <label>Content</label>
+      <input type="text" class="form-control" placeholder="Announcement and Email Title (55 character max)" required="">
+
+    </div>
+    <!-- <div class="card">
+
+      <div class="card-body" style="padding: 0px !important">
+        <quill-editor></quill-editor>
+      </div>
+    </div> -->
+    <div style="    margin-bottom: 3%;">
+      <button class="btn btn-primary">Preview In Course</button>&nbsp;&nbsp;
+      <button class="btn btn-primary">Send Me Email Preview</button>
+    </div>
+    <div>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>

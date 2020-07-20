@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Target your students</h5>
+  </div>
+  <div class="card-body">
+    <p>The descriptions you write here will help students decide if your course is the one for them.</p>
+    <div>
+      <label for="">What will students learn in your course?</label>
+
+      <form #formRef="ngForm">
+          <div *ngFor="let word2 of words1; let in=index" >
+              <div class="form-group input-group">
+                <input (mouseover)="changeText=true" placeholder="Example: Low-light photography" (mouseout)="changeText=false" type="text"   class="form-control delte"  required />
+                <span>
+                   <i (click)="delete(in)" [hidden]="changeText" class="fa fa-trash form-control"></i>
+                </span>
+                
+              </div>
+              <br />
+          </div>
+          <button [disabled]="!formRef.form.valid" (click)="add()">Add answer</button>
+          <!-- <button (click)="delete(in)">Delete</button> -->
+          </form>
+    </div>
+    <br>
+    <div>
+        <label for="">Are there any course requirements or prerequisites?</label>  
+        <form #formRef="ngForm">
+            <div *ngFor="let word2 of words2; let in=index" >
+                <div class="form-group input-group">
+                  <input (mouseover)="changeCourse=true" placeholder="Example: Low-light photography" (mouseout)="changeCourse=false" type="text"   class="form-control delte"  required />
+                  <span>
+                     <i (click)="deletecourse(in)" [hidden]="changeCourse" class="fa fa-trash form-control"></i>
+                  </span>
+                  
+                </div>
+                <br />
+            </div>
+            <button [disabled]="!formRef.form.valid" (click)="addcourse()">Add answer</button>
+            <!-- <button (click)="delete(in)">Delete</button> -->
+            </form>
+      </div>
+      <br>
+      <div>
+          <label for="">Are there any course requirements or prerequisites?</label>  
+          <form #formRef="ngForm">
+              <div *ngFor="let word2 of words3; let in=index" >
+                  <div class="form-group input-group">
+                    <input (mouseover)="changeTarget=true" placeholder="Example: Low-light photography" (mouseout)="changeTarget=false" type="text"   class="form-control delte"  required />
+                    <span>
+                       <i (click)="deletetarget(in)" [hidden]="changeTarget" class="fa fa-trash form-control"></i>
+                    </span>
+                    
+                  </div>
+                  <br />
+              </div>
+              <button [disabled]="!formRef.form.valid" (click)="addtarget()">Add answer</button>
+              <!-- <button (click)="delete(in)">Delete</button> -->
+              </form>
+        </div>
+    </div>
+    </div>
+  

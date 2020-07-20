@@ -1,0 +1,184 @@
+<div class="container">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-md-2"><img src="assets/einston.svg" height="50px" alt=""></div>
+      <div class="col-md-10"><button class="astext" routerLink="/instructor/course">Exit</button></div>
+    </div>
+  </div>
+
+
+  <div class="card-body">
+    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+      <ng-template matStepperIcon="edit">
+        <mat-icon><img src="assets\img\check.png" style="width:15px;padding-bottom: 28px;" alt="done"></mat-icon>
+      </ng-template>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel> <span matTooltip=" Select Course"> Select Course</span></ng-template>
+          <div style="text-align:center">
+              <div>
+                <h4> <b>First, let's find out what type of course you're making.</b> </h4>
+              </div>
+             
+          <div class="row">
+            <div class="col-md-6">
+              <mat-card [class.color1]="isSelected === 'color1'" (click)="setColor('color1')">
+                <mat-card-title>Course</mat-card-title> Create rich learning experiences with the help of video
+                lectures, quizzes, coding exercises, etc.
+              </mat-card>
+            </div>
+            <div class="col-md-6">
+              <mat-card [class.color2]="isSelected === 'color2'" (click)="setColor('color2')">
+                <mat-card-title>Practice Test</mat-card-title>Help students prepare for certification exams by
+                providing practice questions.
+              </mat-card>
+            </div>
+          </div>
+          </div>
+          <div>
+
+            <button class="btn btn-outline-danger nextbtn" mat-button matStepperNext>Continue</button>
+
+
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel> <span matTooltip="Course Title">Course Title</span> </ng-template>
+          <div style="text-align:center">
+            <div>
+              <h4> <b>How about a working title?</b> </h4>
+            </div>
+            <div>
+              <h6> It's ok if you can't think of a good title now. You can change it later. </h6>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="input-group">
+
+                        <input class="form-control " placeholder="e.g. Learn Photoshop CS6 from Scratch" type="text"></div>
+                </div>
+                <div class="col-md-3"></div>
+              </div>
+           
+            <div>
+                <button class="btn btn-outline-primary backbtn" mat-button matStepperPrevious>Previous</button>
+              <button class="btn btn-outline-danger nextbtn" mat-button matStepperNext>Continue</button>
+            </div>
+
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel> <span matTooltip="Category">Category</span> </ng-template>
+          <div class="card-body">
+              <div style="text-align:center">
+                  <div>
+                    <h4> <b>What category best fits the knowledge you'll share?</b> </h4>
+                  </div>
+                  <div>
+                    <h6> If you're not sure about the right category, you can change it later. </h6>
+                  </div>
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <select name="locale" required="" class="form-control">
+                          <option value="282" name="288">Choose Category</option>
+                        <option value="288" name="288">Development</option>
+                        <option value="268" name="268">Business</option>
+                        <option value="294" name="294">IT &amp; Software</option>
+                        <option value="292" name="292">Office Productivity</option>
+                        <option value="296" name="296">Personal Development</option>
+                        <option value="269" name="269">Design</option>
+                        <option value="290" name="290">Marketing</option>
+                        <option value="274" name="274">Lifestyle</option>
+                        <option value="273" name="273">Photography</option>
+                        <option value="276" name="276">Health &amp; Fitness</option>
+                        <option value="278" name="278">Music</option>
+                        <option value="300" name="300">Teaching &amp; Academics</option>
+                        <option value="-1">I don't know yet</option>
+                      </select>
+                    </div>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+            </div>
+
+          </div>
+          <div>
+              <button class="btn btn-outline-primary backbtn" mat-button matStepperPrevious>Previous</button>
+            <button class="btn btn-outline-danger nextbtn" mat-button matStepperNext>Continue</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel> <span matTooltip="Duration" aria-label="Button that displays a tooltip when focused or hovered over">Duration</span>
+        </ng-template>
+        <div style="text-align:center">
+          <div>
+            <h4> <b>How much time can you spend creating your course per week?</b> </h4>
+          </div>
+          <div>
+            <h6> There's no wrong answer. We can help you achieve your goals even if you don't have much time. </h6>
+          </div>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <div class="form-group">
+                      <div class="answer-choice   boxed radio">
+                        <label title="">
+                          <input name="survey-question-266" type="radio" value="1048"><span class="radio-label">
+                            <span class="answer-label">I’m very busy right now (0-2 hours)</span>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="answer-choice   boxed radio">
+                        <label title="">
+                          <input name="survey-question-266" type="radio" value="1050"><span class="radio-label">
+                            <span class="answer-label">I’ll work on this on the side (2-4 hours)</span>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="answer-choice   boxed radio">
+                        <label title="">
+                          <input name="survey-question-266" type="radio" value="1052"><span class="radio-label">
+                            <span class="answer-label">I have lots of flexibility (5+ hours)</span>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="answer-choice   boxed radio">
+                        <label title="">
+                          <input name="survey-question-266" type="radio" value="1054" checked=""><span class="radio-label">
+                            <span class="answer-label">I haven’t yet decided if I have time</span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+        
+        
+                  </div>
+
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+          
+
+
+        </div>
+
+        <div>
+          <button class="btn btn-outline-primary backbtn" mat-button matStepperPrevious>Previous</button>
+          <button class="btn btn-outline-danger nextbtn" mat-button matStepperNext routerLink = "/coursemanage">Create Course</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+  </div>
+
+
+</div>

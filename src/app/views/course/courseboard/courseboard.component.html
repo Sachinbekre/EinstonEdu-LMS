@@ -1,0 +1,31 @@
+<div class="mediaContent">
+  <app-title-board></app-title-board>
+
+  <mat-card>
+    <ul class="nav nav-pills">
+      <li class="nav-item ">
+        <a class="nav-link {{activeclass1}}" data-toggle="pill" routerLink="overview">Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{activeclass2}}" data-toggle="pill" routerLink="courselist">Course Content</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{activeclass3}}" data-toggle="pill" routerLink="q&a">Q & A</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{activeclass4}}" data-toggle="pill" routerLink="bookmarks">Bookmarks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{activeclass5}}" data-toggle="pill" routerLink="announcement">Announcements</a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Dropdown</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Link 1</a>
+                <a class="dropdown-item" href="#">Link 2</a>
+                <a class="dropdown-item" href="#">Link 3</a></div>
+            </li>    -->
+    </ul>
+  </mat-card>
+  <router-outlet></router-outlet>
+</div>

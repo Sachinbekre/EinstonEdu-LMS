@@ -1,0 +1,254 @@
+@charset "utf-8";
+@import '../../utils/variables';
+@import '../../utils/core';
+.loading {
+  padding: 1em;
+}
+.demo {
+  height: 100%;
+  width: 100%;
+}
+
+.demo-header {
+  align-items: center;
+  background: $brand;
+  box-shadow: 0 0.1em 1.5em rgba($dark-grey, 0.5);
+  color: $white;
+  display: flex;
+  padding: 1em;
+}
+
+.demo-header__toggleL {
+    background: transparent;
+    border: 0.15rem solid $white;
+    border-left: 0;
+    border-right: 0;
+    cursor: pointer;
+    font-size: 0;
+    height: 1.5rem;
+    margin-right: 1rem;
+    position: relative;
+    width: 2rem;
+
+    &::after {
+      background: $white;
+      content: '';
+      height: 0.15rem;
+      left: 0;
+      margin-top: -0.075rem;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+  }
+  .demo-header__toggleR {
+    background: transparent;
+    border: 0.15rem solid $white;
+    border-left: 0;
+    border-right: 0;
+    cursor: pointer;
+    font-size: 0;
+    height: 1.5rem;
+    margin-left: 1rem;
+    position: relative;
+    width: 2rem;
+
+    &::after {
+      background: $white;
+      content: '';
+      height: 0.15rem;
+      right: 0;
+      margin-top: -0.075rem;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+  }
+
+.demo-sidebar {
+  background-color: aliceblue;
+  width: 100%;
+  // padding: 2em 1em;
+
+  &.ng-sidebar--opened.ng-sidebar--over {
+    box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+  }
+}
+
+.demo-contents {
+  padding: 0 2em;
+  background-color: black;
+}
+
+.demo-control {
+  background-color: $light-grey;
+  border: 1px solid $dark-grey;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  padding: 0.5em 2em;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: $dark-grey;
+    color: $white;
+  }
+}
+// overlay
+.container-fluid {
+  position: relative;
+  // width: 100%;
+  // max-width: 400px;
+}
+
+
+.container-fluid .ibtn {
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  transform: translate(2%, 10%);
+  -ms-transform: translate(0%, 0%);
+  // background-color: #555;
+  color: white;
+  // font-size: 16px;
+  // padding: 12px 24px;
+  // border: none;
+ 
+  // border-radius: 5px;
+  // text-align: center;
+}
+
+.container-fluid .ibtnB {
+  position: absolute;
+  top: 15px;
+  right: 10%;
+  transform: translate(50%, 20%);
+  -ms-transform: translate(0%, 0%);
+  // background-color: #555;
+  color: white;
+  // font-size: 16px;
+  // padding: 12px 24px;
+  // border: none;
+ 
+  // border-radius: 5px;
+  // text-align: center;
+}
+@media(max-width:323px){
+.ibtnB{
+  display: none;
+}
+}
+// videoComponent css
+.wrapper {
+  // background: linear-gradient(rgba(252,92,125,.5),rgba(106,130,251,.5)), url("/assets/images/mountain.jpg") no-repeat center center;
+   // height: calc(100vh - 50px);
+   //min-height: 700px;
+   min-height: 100%;
+   min-width: 100%;
+   background-size: cover;
+  }
+  
+  h1 {
+   background: linear-gradient(to right, #ff9c9ccf 20%, #2be084 80%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-weight: bold;
+   font-size: 3vw;
+  
+   @media (max-width: 768px) {
+    font-size: 10px;
+   }
+  
+  }
+  
+ .container-fluid {
+   padding: 0 0px;
+ }
+
+ // Adding buttons in control bar
+ .html-classname{
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  padding-top: 1%;
+  color: #fff;
+ }
+.closeBtn{
+  visibility: hidden;
+}
+ @media only screen and (max-width: 600px) {
+  .closeBtn {
+   visibility: visible;
+  }
+  .video-js .vjs-big-play-button {
+    font-size: 1em !important;
+  }
+}
+.video-js .vjs-big-play-button {
+  font-size: 1em !important;
+}
+:host ::ng-deep div.searchBar {
+  width: 100% ;
+  // padding: 5%;
+}
+:host ::ng-deep .postQuetion{
+  // width: 32%;
+  // height: 550px;
+  // background-color: #e4e5e6;
+  padding-left: 8px;
+  // margin-left: auto;
+}
+
+:host ::ng-deep {
+  @media screen and (min-width: 320px) and (orientation: portrait)  {
+    .postQuetion {
+      width: 100%;
+      margin-top: -21px;
+      padding-left: 55px;
+    }
+    .searchBar{
+      padding-left: 60px;
+    }
+  }
+}
+:host ::ng-deep {
+  .content{
+    width: 100% !important;
+  }
+ 
+  @media screen and (min-width: 768px) and (orientation: portrait)  {
+    .postQuetion {
+      width: 100%;
+    }
+  }
+  .searchBtn{
+    width: 90%;
+    padding-top: 2%;
+    margin-left: 14px;
+  }
+}
+.header{
+  display: flex;
+  padding-top: 2%;
+  // background-color: aliceblue;
+}
+
+.ng-sidebar{
+  width: 368px !important;
+}
+.transcriptbar{
+  width: 370px;
+  background-color: aliceblue;
+  height: 571px;
+  // padding-left: 10px;
+}
+@media only screen and (max-width: 600px){
+  .transcriptbar{
+padding-left: 15px;
+  }
+}
+ @media only screen and (max-width: 320px){
+    .transcriptbar{
+  padding-left: 55px;
+    }
+
+  }

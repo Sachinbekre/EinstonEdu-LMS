@@ -1,0 +1,110 @@
+<div class="content">
+  <div class="collection" *ngIf='users$ | async as users'>
+    <div *ngFor="let list of collections">
+      <h2>{{list.name}}
+        <span class="icon"><i class="fa fa-pencil" data-toggle="modal" (click)="editCollection.show()"></i></span>&nbsp;
+        <span class="icon"><i class="fa fa-trash text-danger" data-toggle="modal" (click)="deleteCollection.show()"></i></span></h2>
+      <div>
+        <div>
+          <div>{{list.discription}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div *ngFor="let list of courseList" style="margin: 1%">
+        <mat-card style="padding: 0px">
+          <div class="mycourses">
+            <div class="imageAngular ">
+              <img [src]="list.img" alt="Angular Crash Course for Busy Developers" style="width:100%;max-height: 130px">
+              <!-- <button class="collection dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"  ></i></button> -->
+              <button class=" collectionImg" type="button" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right m-0" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Remove from collection</a>
+              </div>
+              <div class="middle">
+                <div style="display:inline-block;position:relative;"><img class="text" src="assets\img\play.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="courseDetails">
+              <div class="details">
+                <h6>{{list.courseTitle}}</h6>
+              </div>
+              <div>
+                <p>{{list.author}}</p>
+              </div>
+              <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+              <div class="coursecomplete" style="display: flex">
+                <div>{{list.completed}}% Complete</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                  <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                  <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                  <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                  <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+                </div>
+              </div>
+              <div class="pull-right">
+                <div class="rate-btn">
+                  <span id="one">Your Rating</span>
+                  <span id="two">Edit Rating</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <app-collection-ghost [ghosts]="ghosts" [@fadeOut]="!ghosts.length" fxLayout="row wrap"></app-collection-ghost>
+</div>
+<div bsModal #editCollection="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Collection</h5>
+        <i class="fa fa-close" (click)="editCollection.hide()"></i>
+      </div>
+      <div class="modal-body">
+        <div *ngFor="let list of collections">
+          <div>
+            <mat-form-field class="fullwidth">
+              <input matInput [(ngModel)]="list.name">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="fullwidth">
+              <textarea matInput [(ngModel)]="list.discription"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer pull-left">
+        <button type="button" class="btn btn-danger" (click)=" editCollection.hide();editedCollection() ">Edit</button>
+        <button type="button" class="btn" (click)=" editCollection.hide() ">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #deleteCollection="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Collection</h5>
+        <i class="fa fa-close" (click)="deleteCollection.hide()"></i>
+      </div>
+      <div class="modal-body">
+          <p>Are you sure you want to delete your collection? Your courses will still be available in "All Courses."</p>
+      </div>
+      <div class="modal-footer pull-left">
+        <button type="button" class="btn btn-danger" (click)=" deleteCollection.hide();">Yes</button>
+        <button type="button" class="btn" (click)=" deleteCollection.hide()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

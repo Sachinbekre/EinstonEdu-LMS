@@ -1,0 +1,82 @@
+
+<div class="container">
+  
+  <div style="text-align: center">
+    <div> <h2>   Premium Instructor Application {{dynamicdata}}</h2></div>
+    <div> <h6>    Want to charge for a course? Provide your payment info and opt in for our promotional programs.</h6> </div>
+  </div>
+ 
+
+<hr>
+
+    <div class="card-body">
+       
+          
+          <mat-horizontal-stepper labelPosition="bottom" linear #stepper>
+              <ng-template matStepperIcon="done">
+                  <mat-icon><img src="assets\img\check.png" style="width:15px;padding-bottom: 28px;" alt="done"></mat-icon>
+                </ng-template>
+            <mat-step completed="true"  [editable]="isEditable">
+                <form [formGroup]="firstFormGroup" >
+                <ng-template matStepLabel > <span  matTooltip="Personal Information"> Personal Information</span></ng-template>
+                
+                 
+                  <!-- <app-userprofile [parentvalue]=parentvalue></app-userprofile> -->
+                  <app-profile [parentvalue]=parentvalue></app-profile>
+                
+                <div>
+                    <button (click)="goForward(stepper)" type="button" 
+                    [disabled]="stepper.selectedIndex === stepper._steps.length-1">Next</button>
+                </div>
+             </form>
+            </mat-step>
+            <mat-step  [editable]="isEditable">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel> <span matTooltip="Profile Picture" >Profile Picture</span> </ng-template>
+                <app-photo [photovalue]=photovalue ></app-photo>
+                <div>
+                 
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step  [editable]="isEditable">
+                <form [formGroup]="thirdFormGroup">
+                  <ng-template matStepLabel> <span matTooltip="Terms of Service">Terms of Service</span> </ng-template>
+                  <mat-form-field>
+                    <input matInput placeholder="Terms of Service" formControlName="thirdCtrl" required>
+                  </mat-form-field>
+                  <div>
+                    
+                    <button mat-button matStepperNext>Next</button>
+                  </div>
+                </form>
+              </mat-step>
+              <mat-step [editable]="isEditable">
+                  <form [formGroup]="fourthFormGroup">
+                    <ng-template matStepLabel> <span matTooltip="Einston Edu Marketing">Einston Edu Marketing</span> </ng-template>
+                    <mat-form-field>
+                      <input matInput placeholder="Marketting" formControlName="fourthCtrl" required>
+                    </mat-form-field>
+                    <div>
+                      
+                      <button mat-button matStepperNext>Next</button>
+                    </div>
+                  </form>
+                </mat-step>
+            <mat-step>
+              <ng-template matStepLabel> <span matTooltip="Payout Method" aria-label="Button that displays a tooltip when focused or hovered over">Payout Method</span> </ng-template>
+              You are now done.
+              <div>
+               
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div>
+            </mat-step>
+          </mat-horizontal-stepper>
+    <hr>
+   
+    
+  </div>
+ 
+
+</div>

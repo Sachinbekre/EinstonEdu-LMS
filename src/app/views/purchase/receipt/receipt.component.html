@@ -1,0 +1,64 @@
+<div class="mediaContent">
+  <mat-card style="height:115px">
+    <br>
+    <h4><b> Receipt</b>
+      <button class="btn btn-primary pull-right" routerLink="../" >Back</button>
+    </h4>
+   
+  </mat-card>
+  <div class="card" *ngFor="let info of receipt">
+   <div style="margin:3%">
+    <div class="borders">
+      <h4 class="mb">Receipt for : {{info.date}}</h4>
+    </div>
+    <div >
+      <div class="borders">
+      <h4 class="mt">{{info.company}}</h4>
+     <div class="row col-md-12 mb">
+      <p >{{info.address}}</p>
+      <div class="order ">
+        <b>Date:</b>&nbsp;{{info.receiptDate}} <br>
+        <b>Order #:</b>&nbsp;{{info.orderNo}}
+      </div>
+    </div>
+     </div>
+     <div class="borders">
+       <label class="mb mt" ><b>Sold To:</b> </label>&nbsp;{{info.soldTo}}
+     </div>
+     <div  style="overflow-x:auto" class="borders">
+       <table class="table">
+         <tr>
+           <th>Item</th>
+           <th>Ordered</th>
+           <th>Coupon code</th>
+           <th>Quantity</th>
+           <th>Price</th>
+           <th>Amount</th>
+         </tr>
+         <tr *ngFor="let data of info.items">
+           <td>{{data.item}}</td>
+           <td>{{data.orderedDate}}</td>
+           <td>{{data.couponCode}}</td>
+           <td>{{data.qty}}</td>
+           <td><i class="fa fa-rupee"></i>{{data.price}}</td>
+           <td><i class="fa fa-rupee"></i>{{data.amount}}</td>
+         </tr>
+         <tr >
+           <td colspan="3" ></td>
+           <td>Total</td>
+           <td><i class="fa fa-rupee"></i>600</td>
+         </tr>
+         <tr >
+          <td colspan="3" ></td>
+          <td>Total Paid</td>
+          <td><i class="fa fa-rupee"></i>600</td>
+        </tr>
+       </table>
+     </div>
+     <div class="mt">
+       <p>If you have any questions about this receipt please contact us at <a href="www.logichive.in">logichive.in</a></p>
+     </div>
+    </div>
+  </div>
+  </div>
+</div>

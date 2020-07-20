@@ -1,0 +1,43 @@
+
+@import '../../../utils/animations/ghost-animation.scss';
+@import '../course-list.component.scss';
+:host {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    // top: 87px;
+    width: 100%;
+}
+
+.ghost_item {
+    overflow: hidden;
+    margin-bottom: -6px;
+    height: auto;
+    .lines {
+        margin-block-end: $ghost-row-gap;
+        // margin-left: $avatar-gap;
+        margin-block-end: $row-gap;
+        // width: calc(100% - $avatar-gap);
+        input,
+        select,
+        table,
+        button {
+            background-color: #ccc !important;
+            border-bottom: 2px solid white !important;
+            border-radius: 4px 4px 4px 4px !important;
+            @include animate-ghost-line;
+        }
+        input {
+            width: 100%;
+        }
+        table{
+            width: 100%;
+            min-height: 50px;
+        }
+        button{
+            width: 80%;
+            height: 30px;;
+        }
+       
+    }
+}

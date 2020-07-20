@@ -1,0 +1,94 @@
+<div class="mediaContent">
+  <mat-card class="matPad">
+    <div class="row" style="background-color:#29303b;padding: 3%">
+      <div class="col-md-4" class="imageAngular">
+
+        <img src="assets\img\angular.png" alt="Angular Crash Course for Busy Developers">
+
+        <div class="middle">
+          <div><img class="text" src="assets\img\play.png" alt=""></div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <a href="#" style="color:#ffffff">
+          <a href="">
+            <h3>Angular Crash Course for Busy Developers</h3>
+          </a>
+        </a><br>
+        <button type="button" class="header--course-header-action--VBYPz btn btn-lg btn-primary">Continue to Lecture 12</button><br>
+        <div class="row" style="cursor: pointer; padding: 14px">
+          <div>
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+          </div>&nbsp;&nbsp;
+          <div>
+            <h5 style="color:#ffffff" data-toggle="modal" (click)="rating.show()">Edit Your Rating</h5>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div style="width: 80%;text-align: center"> <span style="color:#ffffff"> Get started (<span><strong>{{0}}</strong>
+                  of <strong>{{146}}</strong> items complete</span>)</span></div>
+            <div style="width: 1%"></div>
+            <div style="width: 19%;text-align: center"><span style="color:#ffffff"><i class="fa fa-trophy fa-2x"></i>
+              </span></div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="row">
+            <div style="width: 80%">
+              <mat-progress-bar class="leftCurved" mode="determinate" value="10"></mat-progress-bar>
+            </div>
+            <div style="width: 1%"></div>
+            <div style="width: 19%">
+              <mat-progress-bar class="rightCurved" mode="determinate"></mat-progress-bar>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </mat-card>
+</div>
+  
+  
+  <!-- model -->
+  <div bsModal #rating="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Your Review</h4>
+          <button type="button" class="close" (click)="rating.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row" style="padding: 3%">
+            <div>
+              <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+              <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+              <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+              <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+              <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+            </div>
+            &nbsp;7 months ago
+            <br><br />
+            <div>
+              <h6>There are no written comments for your review.</h6>
+            </div>
+  
+  
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="rating.hide()">Close</button>
+          <button type="button" class="btn btn-danger">Edit Review</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->

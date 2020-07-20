@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Film & edit</h5>
+  </div>
+  <div class="card-body">
+    <div class="row" style="background-color: #e4e5e6;padding: 3%">
+      <div class="col-md-6">
+        <h4>You’re ready to share your knowledge.</h4>
+        <div>
+          <p>This is your moment! If you’ve structured your course and used our guides, you're well prepared for the
+            actual shoot. Pace yourself, take time to make it just right, and fine-tune when you edit.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <mat-card style="text-align: center">
+          <div><img src="assets/img/vidImg.png" alt=""></div>
+          <div>
+            <h5> You’re in good company</h5>
+          </div>
+          <p>Chat and get production help with other Udemy instructors</p>
+          <div><button mat-button class="btn btn-danger">Join the community</button></div>
+        </mat-card>
+      </div>
+    </div>
+    <div class="">
+      <div class="tips">
+        <i class="fa fa-lightbulb-o fa-2x" style="color: blue"></i>&nbsp;&nbsp; <h5>Tips</h5>
+        <br>
+      </div>
+      <div *ngFor="let content of filmEdit.tips" style="padding-left: 30px">
+        <h6>{{content.heading}}</h6>
+        <p>{{content.content}}</p>
+      </div>
+    </div>
+    <div class="">
+      <div class="tips">
+        <i class="fa fa-exclamation-circle fa-2x" style="color: blue"></i>&nbsp;&nbsp; <h5>Requirements</h5>
+      </div>
+      <div *ngFor="let req of filmEdit.requirements" style="padding-left: 30px">
+        <li>{{req.content}}</li>
+      </div>
+    </div>
+    <div class="">
+      <div class="tips">
+        <i class="icon icon-book-open font-xl" style="color: blue"></i>&nbsp;&nbsp; <h5>Resources</h5>
+      </div>
+    </div>
+    <div *ngFor="let content of filmEdit.resources" style="padding-left: 30px">
+        <a href="" target="_blank">{{content.links}}</a>
+        <p>{{content.text}}</p>
+    </div>
+  </div>
+</div>

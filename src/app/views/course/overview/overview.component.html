@@ -1,0 +1,161 @@
+<div class="container" style="padding:5%">
+  <div class="content">
+    <div *ngIf='users$ | async as users'>
+      <div>
+        <h4> <strong>Recent Activity</strong> </h4>
+      </div>
+      <div class="row">
+
+
+        <div class="col-md-6">
+
+          <div class="card">
+            <div class="card-header">
+              <h5><b>Recent questions</b></h5>
+            </div>
+            <mat-card>
+              <div class="row">
+                <div class="col-md-2">
+                  <img class="imag" src="assets\img\avatars\6.jpg" alt="">
+                </div>
+                <div class="col-md-10">
+                  <p>This is awesome</p>
+                </div>
+
+              </div>
+            </mat-card>
+            <div class="card-footer" routerLink = "../q&a" style="cursor: pointer;">Browse all questions</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5><b>Recent instructor announcements</b></h5>
+            </div>
+            <mat-card>
+              <div class="row">
+                <div class="col-md-2">
+                  <img class="imag" src="assets\img\avatars\5.jpg" alt="">
+                </div>
+                <div class="col-md-10">
+                  <p>This is awesome</p>
+                </div>
+
+              </div>
+            </mat-card>
+            <div class="card-footer"  routerLink = "../announcement" style="cursor: pointer;">Browse all announcements</div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <h4> <strong>About this course</strong> </h4>
+      </div>
+      <p>Have limited time to learn Angular 4 (Angular 2+)? Take this course and learn Angular in
+        {{overview.course_details.total_duration}}!</p>
+
+      <div class="gridxx">
+        <div>By the numbers</div>
+        <div class="aligngrid">Skill level :</div>
+        <div>{{overview.course_details.skill_level}}</div>
+        <div class="aligngrid">Lectures :</div>
+        <div>{{overview.course_details.total_lectures}}</div>
+        <div></div>
+        <div class="aligngrid">Students :</div>
+        <div> {{overview.course_details.enrollments}}</div>
+        <div class="aligngrid">Video :</div>
+        <div>{{overview.course_details.total_duration}}</div>
+        <div></div>
+        <div class="aligngrid">Languages :</div>
+        <div>
+          <div *ngFor="let item of overview.course_details.languages">{{item}}</div>
+        </div>
+        <div></div>
+        <div></div>
+        <div> </div>
+        <div class="aligngrid">Captions :</div>
+        <div>
+          <ng-container *ngIf="overview.course_details.caption; else elseTemplate">
+            yes
+          </ng-container>
+          <ng-template #elseTemplate>
+            no
+          </ng-template>
+        </div>
+
+        <div></div>
+        <div></div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+
+        <div class="col-md-3 ">Features</div>
+        <div class="col-md-4 ">
+          <div>Available on iOS and Android</div>
+
+        </div>
+        <div class="col-md-4 ">
+          <div class="row">
+
+            <div class="col-md-9">
+              <div *ngFor="let item of overview.course_details.features">{{item}}</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <hr>
+
+      <div class="row">
+
+        <div class="col-md-3 ">Description</div>
+        <div class="col-md-8 ">
+          <div>{{overview.course_details.course_desc}}</div>
+
+        </div>
+
+
+      </div>
+      <hr>
+
+      <div class="row">
+
+        <div class="col-md-2">Instructor</div>
+        <div class="col-md-8 ">
+          <div>
+
+            <div class="row">
+              <div class="col-md-2">
+                <img class="avt" src=" {{user.avatar}} " alt="">
+              </div>
+              <div class="col-md-10">
+                <div>
+                  <h3> <b>{{user.first_name}} {{user.last_name}}</b> </h3>
+                </div>
+                <p>{{user.headline}}</p>
+              </div>
+              <a href="{{user.social_links.facebook}}" target="_blank" class="fa fa-facebook"></a>
+              <a href="{{user.social_links.twitter}}" target="_blank" class="fa fa-twitter"></a>
+              <a href="{{user.social_links.linkedin}}" target="_blank" class="fa fa-linkedin"></a>
+              <a href="{{user.social_links.youtube}}" target="_blank" class="fa fa-youtube"></a>
+              <a href="{{user.social_links.github}}" target="_blank" class="fa fa-github"></a>
+              <a href="{{user.social_links.website}}" target="_blank" class="fa fa-globe"></a>
+
+            </div>
+
+            <div>
+              {{user.biography}}
+            </div>
+          </div>
+
+        </div>
+
+        
+      </div>
+    </div>
+    <app-overview-ghost *ngIf="!useSpinner" [ghosts]="ghosts" [@fadeOut]="!ghosts.length" fxLayout="row wrap"></app-overview-ghost>
+  </div>
+</div>

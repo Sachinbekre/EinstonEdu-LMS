@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="CoreUI Pro Angular Admin Template">
+  <meta name="author" content="Einston Intelligence">
+  <meta name="keyword" content="Einston,Accounting">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <title>Einston Intelligence</title>
+  <link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet" href="assets/layerslider/css/layerslider.css">
+
+
+  <link href="http://vjs.zencdn.net/7.0/video-js.min.css" rel="stylesheet">
+  <script src="http://vjs.zencdn.net/7.0/video.min.js"></script>
+  <script>window.HELP_IMPROVE_VIDEOJS = true;</script>
+  <meta name="theme-color" content="#1976d2">
+  <style type="text/css">
+    body,
+    html {
+      height: 100%;
+    }
+
+    .app-loading {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: #2196f3;
+    }
+
+    .app-loading .logo {
+      width: 100px;
+      height: 100px;
+
+      background: url(./assets/logo.png) center center no-repeat;
+    }
+
+    .app-loading .spinner {
+      height: 200px;
+      width: 200px;
+      animation: rotate 2s linear infinite;
+      transform-origin: center center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .app-loading .spinner .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #ddd;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+  </style>
+
+<script defer src="assets/layerslider/js/greensock.js" type="text/javascript"></script>
+<script defer src="assets/layerslider/js/jquery.js" type="text/javascript"></script>
+ 
+<!-- LayerSlider script files -->
+<script defer src="assets/layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+<script defer src="assets/layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href=" https://hammerjs.github.io/dist/hammer.min.js" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+  <script src="http://cdn.rawgit.com/hammerjs/touchemulator/master/touch-emulator.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body class="app">
+  <!-- App Loading... -->
+  <div class="app-loading">
+    <div class="logo"></div>
+    <svg class="spinner" viewBox="25 25 50 50">
+      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+    </svg>
+  </div>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+</body>
+
+</html>

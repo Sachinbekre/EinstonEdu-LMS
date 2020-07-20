@@ -1,0 +1,229 @@
+<!-- <app-header [fixed]="true" [navbarBrandFull]="{src: 'assets/img/brand/logo.svg', width: 89, height: 25, alt: 'CoreUI Logo'}"
+    [navbarBrandMinimized]="{src: 'assets/img/brand/sygnet.svg', width: 30, height: 30, alt: 'CoreUI Logo'}"
+    [sidebarToggler]="'lg'" [asideMenuToggler]="'lg'">
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item dropdown px-3">
+            <button class="btn btn-default" data-toggle="dropdown"><i class="fa fa-th fa-lg"></i>&nbsp;&nbsp;
+                Categories
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-code fa-lg"></i> Development</a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bar-chart fa-lg"></i> Business</a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-tv fa-lg"></i> IT and Software </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-newspaper-o fa-lg"></i> Office Productivity </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="icon icon-book-open font-xl"></i> Personal Development </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-tv fa-lg"></i> Design</a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-suitcase fa-lg"></i> Marketing </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-group fa-lg"></i> Lifestyle </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-camera-retro fa-lg"></i> Photography </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-heartbeat fa-lg"></i> Health & Fitness </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-music fa-lg"></i> Music </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#"><i
+                            class="fa fa-cubes fa-lg"></i> Teaching & Academics </a>
+                    <ul class="dropdown-menu">
+                        <a class="dropdown-item" href="#">A</a>
+                        <a class="dropdown-item" href="#">b</a>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item px-3">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="search">
+                <div class="input-group-append">
+                    <button class="btn btn-danger" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+    <ul class="nav navbar-nav ml-auto">
+
+        <li class="nav-item dropdown">
+            <button class="btn btn-default" type="button" data-toggle="dropdown">Instructor
+            </button>
+            <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <button class="btn btn-default" type="button" data-toggle="dropdown" routerLink="/mycourse">My Courses
+            </button>
+            <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="/course/courselist">Angular Crash Course for Busy Developer</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <button class="btn btn-default" type="button" data-toggle="dropdown">
+                <mat-icon matBadge="" matBadgeColor="warn" color="accent">favorite_border</mat-icon>
+            </button>
+            <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item">Your wishlist is empty.</a>
+                <a class="dropdown-item" href="#">Explore courses</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <button class="btn btn-default" type="button" data-toggle="dropdown">
+                <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+            </button>
+            <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item">Your wishlist is empty.</a>
+                <a class="dropdown-item" href="#">Explore courses</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <button class="btn btn-default" type="button" data-toggle="dropdown">
+                <mat-icon matBadge="5" matBadgeColor="warn">notifications_none</mat-icon>
+            </button>
+            <div class="dropdown-menu dropleft" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item">Your wishlist is empty.</a>
+                <a class="dropdown-item" href="#">Explore courses</a>
+            </div>
+        </li>&nbsp;
+        <li class="nav-item dropdown">
+            <button class="btn btn-sm btn-default" type="button"  routerLink="/userprofile">               <div><img class="profileimg" src="assets/img/avatars/8.jpg" alt=""></div>
+            </button>
+            <div class="dropdown-menu dropleft" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="/userprofile">
+                    <div class="row" >
+                        <div style="display: flex">
+                            <img class="profileimg" src="assets/img/avatars/8.jpg" alt="">&nbsp;&nbsp;
+                            <div>
+                                <div><b>Mosh Feghhamedani</b> </div>
+                                <div>moshfeghham@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="dropdown-item" href="#"><i class="fa fa-bell-o fa-lg"></i>
+                    My notifications<span class="badge badge-pill badge-danger" style=" position: relative;
+      left: 5px;">3</span></a>
+                <a class="dropdown-item" href="#"><i class="fa fa-commenting fa-lg"></i> Messages
+                    <span class="badge badge-pill badge-danger" style=" position: relative;
+      left: 5px;">2</span></a>
+                <a class="dropdown-item" href="#"> <i class="fa fa-share fa-lg"></i> Invite friends</a>
+                <a class="dropdown-item" href="#"> <i class="fa fa-history fa-lg"></i> Purchase history</a>
+                <a class="dropdown-item" href="#"> <i class="icon icon-wallet font-xl"></i> Einston Edu Credits</a>
+                <a class="dropdown-item" href="">Wishlist</a>
+                <a class="dropdown-item" href="">Instructor Dashboard</a>
+                <a class="dropdown-item" href="">Help</a>
+                <a class="dropdown-item" href="">Logout</a>
+            </div>
+        </li>
+    </ul>
+</app-header> -->
+<app-header-bar></app-header-bar>
+<div class="">
+    <!-- <app-sidebar [fixed]="true" [display]="'lg'">
+        <app-sidebar-nav [navItems]="navItems | async" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
+        <app-sidebar-minimizer></app-sidebar-minimizer>
+    </app-sidebar> -->
+    <main class="main">
+        <ol class="breadcrumb" *ngIf="showBreadCrumbBar | async">
+            <app-breadcrumb></app-breadcrumb>
+            <li class="breadcrumb-menu d-md-down-none">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <a class="btn" href="#"><i class="icon-speech"></i></a>
+                    <a class="btn" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>
+                    <a class="btn" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>
+                </div>
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <a class="btn" href="#"><i class="icon-speech"></i></a>
+                    <a class="btn" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>
+                    <a class="btn" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>
+                </div>
+            </li>
+        </ol>
+
+        <!-- </ng-template> -->
+        <!-- <div class="container-fluid"> -->
+        <router-outlet></router-outlet>
+        <!-- </div> -->
+        <!-- /.container-fluid -->
+    </main>
+    <app-aside [fixed]="true" [display]="false">
+        <router-outlet name='sidebar'></router-outlet>
+    </app-aside>
+</div>
+<!-- <app-footer>
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <a class="btn btn-success" href="#"> <i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
+        <a class="btn btn-block btn-dark" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>
+        <a class="btn btn-success btn-link btn-pill" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>
+      </div>
+  <span class="ml-auto">Powered by <a href="http://logichive.in">EINSTON INTELLIGENCE</a></span>
+</app-footer> -->

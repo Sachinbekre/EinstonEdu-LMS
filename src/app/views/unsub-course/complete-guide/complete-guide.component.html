@@ -1,0 +1,119 @@
+<div class="mediaContent">
+  <mat-card class="matPad" style="background-color:#29303b;padding: 3%">
+    <div style="color:#ffffff">
+      <h5><span class="gift" routerLink="/gift"> <i class="fa fa-gift mr-2"></i>Gift This Course</span> <span class="ml-2">
+          <i class="fa fa-heart-o mr-1"></i> Wishlist</span></h5>
+
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <a style="color:#ffffff">
+          <h3>Angular 7 (formerly Angular 2) - The Complete Guide</h3>
+        </a><br>
+        <h5 style="color:#ffffff">Master Angular (Angular 2+, incl. Angular 7) and build awesome, reactive web apps
+          with the successor of Angular.js</h5>
+
+        <div class="row" style="cursor: pointer; padding: 14px">
+          <div>
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+            <i class="fa fa-star fa-lg" style="color: coral"></i>&nbsp;
+          </div>&nbsp;&nbsp;
+          <div>
+            <h6 style="color:#ffffff">4.6 (74,893 ratings) &nbsp;&nbsp;&nbsp;
+              238,802 students enrolled</h6>
+
+          </div><br>
+
+        </div>
+        <div>
+          <p style="color:#ffffff">Created by Maximilian SchwarzmÃ¼ller &nbsp;&nbsp;&nbsp;
+            Last updated 2/2019</p>
+        </div>
+        <div> &nbsp;&nbsp;&nbsp;
+          <p style="color:#ffffff"> <i class="fa fa-comment"></i> English &nbsp;&nbsp;&nbsp; <i class="fa fa-creative-commons">English
+              [Auto-generated]</i> </p>
+
+        </div>
+
+      </div>
+      <div class="col-md-3 ">
+
+        <div class="container">
+          <div class="right_col">
+            <div class="imageAngular">
+              <img width="240" height="135" src="assets\img\angular6.jpg" alt="Angular Crash Course for Busy Developers"
+                class="imgCourse form-group">
+              <div class="middle">
+                <div><img class="text" src="assets\img\play.png" alt=""></div>
+              </div>
+            </div>
+            <div class="form-group" style="display:inline-block;padding-left: 10%">
+              <span><i class="fa fa-rupee" style="font-size:30px">700</i>&nbsp;&nbsp;&nbsp;
+                <span style="text-decoration:line-through"><i class="fa fa-rupee">12,160</i></span>&nbsp;&nbsp;&nbsp;
+                <span>94% off</span>
+              </span>
+            </div>
+            <div class="form-group"> <button class="btn btn-danger btn-block">Buy Now</button></div>
+            <div class="form-group"> <button class="btn btn-block btn-outline-secondary ">Add to cart</button></div>
+            <p class="form-group" style="text-align:center">30-Day Money-Back Guarantee</p>
+            <div>
+              <b class="form-group">Includes</b>
+              <ul class="fa-ul form-group">
+                <li><span class="fa-li"><i class="fa fa-money"></i></span>28 hours on-demand video</li>
+                <li><span class="fa-li"><i class="fa fa-file-o"></i></span>40 articles</li>
+                <li><span class="fa-li"><i class="fa fa-file-text-o"></i></span>95 downloadable resources</li>
+                <li><span class="fa-li"><i class="fa fa-infinity"></i></span>Full lifetime access</li>
+                <li><span class="fa-li"><i class="fa fa-mobile"></i></span>Access on mobile and TV</li>
+                <li><span class="fa-li"><i class="fa fa-flash"></i></span>Assignments</li>
+                <li><span class="fa-li"><i class="fa fa-snowflake-o"></i></span>Certificate of Completion</li>
+              </ul>
+            </div>
+            <div>
+              <a *ngIf="!couponCode" (click)="couponCode=true" class="coupon form-group">Have a coupon?</a>
+              <div *ngIf="couponCode" class="input-group"><input autocomplete="email" class="form-control form-control-sm"
+                  id="input2-group2" name="input2-group2" placeholder="Enter Coupon" type="text"><span class="input-group-append"><button
+                    class="btn btn-danger btn-sm" type="button">Apply</button></span></div>
+            </div>
+            <hr>
+            <div data-toggle="modal" (click)="share.show()">
+              <p class="share"><i class="fa fa-share">Share</i></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+</div>
+
+
+<!-- model -->
+<div bsModal #share="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Share this course</h4>
+        <button type="button" class="close" (click)="share.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div style="padding: 3%">
+          <div class="form-group">
+            <div class="input-group"><input class="form-control" type="text">
+              <div class="input-group-append"><span class="input-group-text ">Copy</span></div>
+            </div>
+          </div>
+          <button class="btn btn-brand btn-facebook mr-1" type="button"><i class="fa fa-facebook"></i></button>
+          <button class="btn btn-brand  btn-twitter mr-1" type="button"><i class="fa fa-twitter"></i></button>
+          <button class="btn btn-brand  btn-linkedin mr-1" type="button"><i class="fa fa-linkedin"></i></button>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

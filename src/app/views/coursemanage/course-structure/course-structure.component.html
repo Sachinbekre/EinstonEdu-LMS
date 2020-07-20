@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Course Structure</h5>
+  </div>
+  <div class="card-body">
+    <div class="row" style="background-color: #e4e5e6;padding: 3%">
+      <div class="col-md-6">
+        <h4>There's a course in you. Plan it out.</h4>
+        <div>
+          <p>Planning your course carefully will create a clear learning path for students and help you once you film. Think down to the details of each lecture including the skill you’ll teach, estimated video length, practical activities to include, and how you’ll create introductions and summaries</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <mat-card style="text-align: center">
+          <div><img src="assets/CourseStructure.png" alt=""></div>
+          <div>
+            <h5>Our library of resources</h5>
+          </div>
+          <p>Tips and guides to structuring a course students love</p>
+          <div><button mat-button class="btn btn-danger">Learn at Teach Hub</button></div>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="tips">
+        <i class="fa fa-lightbulb-o fa-2x" style="color: blue"></i>&nbsp;&nbsp; <h5>Tips</h5>
+        <br>
+      </div>
+      <div *ngFor="let content of filmEdit.tips" style="padding-left: 30px">
+        <h6>{{content.heading}}</h6>
+        <p>{{content.content}}</p>
+      </div>
+    </div>
+    <div class="">
+      <div class="tips">
+        <i class="fa fa-exclamation-circle fa-2x" style="color: blue"></i>&nbsp;&nbsp; <h5>Requirements</h5>
+      </div>
+      <div *ngFor="let req of filmEdit.requirements" style="padding-left: 30px">
+        <li>{{req.content}}</li>
+      </div>
+    </div>
+    <div class="row">
+      <div class="tips">
+        <i class="icon icon-book-open font-xl" style="color: blue"></i>&nbsp;&nbsp; <h5>Resources</h5>
+      </div>
+    </div>
+    <div *ngFor="let content of filmEdit.resources" style="padding-left: 30px">
+        <a href="" target="_blank">{{content.links}}</a>
+        <p>{{content.text}}</p>
+    </div>
+  </div>
+</div>

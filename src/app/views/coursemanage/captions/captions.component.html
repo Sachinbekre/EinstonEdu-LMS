@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header">
+      <div class="row">
+          <div class="col-md-8" style="display: flex"><h5>Captions</h5>&nbsp;&nbsp;
+            <select class="form-control-sm">
+              <option value="">English(UK)</option>
+              <option value="">English(US)</option>
+              <option value="">Add New Langauge</option>
+            </select>&nbsp;&nbsp;
+            <label for="">0/0 published lectures captioned</label>&nbsp;
+            <i class="fa fa-question-circle fa-lg" matTooltip="The'CC'icon will only be shown on your course when all published video lectures in your course have captions. " style="margin-top: 5px"></i>
+          </div> 
+          <div class="col-md-4" style="text-align: right">
+            <button class="btn btn-primary" (click)="enable()" *ngIf="!enablebtn">Enable</button>
+            <button class="btn btn-outline-primary" (click)="enable()" *ngIf="enablebtn">Disable</button>
+           </div>
+      </div>
+    </div>
+    
+  </div>
+      <mat-card style="background-color: #E6F2F5">
+          <i class="fa fa-exclamation-circle fa-lg"></i> &nbsp; When you add video lectures to your course via the Curriculum you will be able to add captions to those videos here.
+        </mat-card>

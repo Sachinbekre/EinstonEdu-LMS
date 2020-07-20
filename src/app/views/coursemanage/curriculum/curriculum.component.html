@@ -1,0 +1,229 @@
+<div class="card">
+  <h4 class="card-header">Curriculum <small class="float-sm-right"><button class="btn btn-danger">Bulk Uploader</button></small></h4>
+  <div class="card-body">
+          <div>
+              <a class="btn btn-sm btn-outline-secondary" (click)="onSection()">
+                  <span class="fa fa-lg" [class.fa-plus-circle]="isSection" [class.fa-minus-circle]="!isSection"></span>
+              </a>
+          </div>
+          <br>
+          <div class="form-group" style="border: 1px solid gainsboro;padding: 10px;" *ngIf="section">
+            <label class="" for="">
+              <h6>New Section:</h6>
+            </label>
+            <div class="">
+              <input type="text" class="form-control form-control-sm" placeholder="Enter a Title"><br>
+              <label for="">What will students be able to do at the end of this section?</label>
+              <input type="text" class="form-control form-control-sm" placeholder="Enter a Learning Objective"><br>
+              <div>
+                <button class="btn btn-sm btn-outline-secondary" (click)="section=false;isSection=true">Cancel</button>&nbsp;&nbsp;
+                <button class="btn btn-sm btn-primary">Add Section</button>
+              </div>
+            </div>
+          </div>
+          <br>
+      <div class="container" style="border: 1px solid gainsboro">
+        <div class="show" style="padding: 3px 0px 5px 0px">
+          <div>
+              <a class="btn btn-sm btn-info" (click)="onClick()">
+                  <span class="fa fa-lg" [class.fa-plus-circle]="isSelected" [class.fa-minus-circle]="!isSelected"></span>
+              </a>
+          </div>
+              <div *ngIf="content">
+              <mat-card class="mat_heading" *ngIf="matCard">
+                    <button class="btn btn-sm btn-default" (click)="lecture=true;matCard=false"><span><i class="fa fa-plus fa-lg">&nbsp;&nbsp;</i>Lecuter</span></button>&nbsp;
+                    <button class="btn btn-sm btn-default" (click)="quiz=true;matCard=false"><span><i class="fa fa-plus fa-lg">&nbsp;&nbsp;</i>Quiz</span></button>&nbsp;
+                    <button class="btn btn-sm btn-default" (click)="code=true;matCard=false"><span><i class="fa fa-plus fa-lg">&nbsp;&nbsp;</i>Coding Exercise</span></button>&nbsp;
+                    <button class="btn btn-sm btn-default"  matTooltip="Info about the action" disabled><span><i class="fa fa-plus fa-lg">&nbsp;&nbsp;</i>Practice Test</span></button>&nbsp;
+                    <button class="btn btn-sm btn-default" (click)="assign=true;matCard=false"><span><i class="fa fa-plus fa-lg">&nbsp;&nbsp;</i>Assignment</span></button>&nbsp;
+                </mat-card>
+                <mat-card style="border: 1px solid gainsboro;margin-left: 6%;" *ngIf="lecture">
+                  <div class="container">
+                    <div style="display: flex;width: 100%">
+                      <h6> New Lecture :</h6><input type="text" class="form-control form-control-sm" placeholder="Enter a Title">
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12" style="text-align: right"><button class="btn btn-sm btn-danger" (click)="lecture=false;matCard=true">Cancel</button>&nbsp;<button class="btn btn-sm btn-success">Save</button></div>
+                    </div>
+                  </div>
+                </mat-card>
+                <mat-card style="border: 1px solid gainsboro;margin-left: 6%;" *ngIf="quiz">
+                    <div class="row">
+                      <div class="col-md-3"><label for="">New Quiz:</label></div>
+                      <div class="col-md-9"><input type="text" class="form-control form-control-sm" placeholder="Enter a Title"></div>
+                      
+                    </div>
+                    <br>
+                        <quill-editor name="quill"></quill-editor>
+                        <div class="row">
+                          <div class="quilFooter">
+                            <button class="btn btn-sm btn-danger" (click)="quiz=false;matCard=true">Cancel</button>&nbsp;<button class="btn btn-sm btn-success">Add Quiz</button>
+                          </div>
+                        </div>
+                </mat-card>
+                <mat-card style="border: 1px solid gainsboro;margin-left: 6%;" *ngIf="code">
+                      <div class="col-md-10">
+                        <input type="text" class="form-control form-control-sm" placeholder="Enter a Title">
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-md-12" style="text-align: right"><button class="btn btn-sm btn-danger" (click)="code=false;matCard=true">Cancel</button>&nbsp;<button class="btn btn-sm btn-success">Add Coding Exercise</button></div>
+                      </div>
+                  </mat-card>
+                  <mat-card style="border: 1px solid gainsboro;margin-left: 6%;" *ngIf="assign">
+                      <div class="col-md-10">
+                        <input type="text" class="form-control form-control-sm" placeholder="Enter a Title">
+                      </div>
+                      <br>
+                      <div class="row">
+                        <div class="col-md-12" style="text-align: right"><button class="btn btn-sm btn-danger" (click)="assign=false;matCard=true">Cancel</button>&nbsp;<button class="btn btn-sm btn-success">Add Assignment</button></div>
+                      </div>
+                  </mat-card>
+              </div>
+        </div>
+        
+          <div id="accordion" cdkDropList class="" (cdkDropListDropped)="drop($event)">
+            <div class="card" *ngFor="let cv of curriculumData;let i=index" cdkDrag>
+              <div class="card-header" id="headingOne">
+                <div class="row">
+                  <div class="col-md-8">
+                    <i class="fa fa-check-circle" style="color:green"></i>&nbsp;
+                    Lecture {{cv.lecture}} : {{cv.subject}}&nbsp;&nbsp;
+                    <button class="btn btn-sm"><i class="fa fa-pencil"></i></button>
+                    <button class="btn btn-sm"><i class="fa fa-trash"></i></button>
+                  </div>
+        
+                  <div class="col-md-4">
+                    <a class="btn btn-link" data-toggle="collapse"data-parent="#accordion" href="#content{{i}}" aria-expanded="true" style="border: 1px solid cornflowerblue;"><i class="fa fa-plus"></i> Content</a>
+                    <div class="pull-right">
+        
+                      <h5 class="mb-0">
+                        <a class="btn btn-link" data-toggle="collapse"data-parent="#accordion" href="#collapseOne{{i}}" aria-expanded="true">
+                          <i class="fa" aria-hidden="true"></i>
+                        </a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="content{{i}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="container" style="text-align: center;padding: 3%">
+                    Select the main type of content. Files and links can be added as resources. <a href="" target="blank">Learn about content types.</a> 
+                </div>
+              
+                <div class="row" style="justify-content: center">
+                      <button id="square-button" class="btn btn-outline-primary btn-secondary"><i class="fa fa-play-circle-o fa-3x"></i> <p style="margin:0px">video</p></button>&nbsp;&nbsp;&nbsp;
+                      <button id="square-button" class="btn btn-outline-primary btn-secondary"><i class="fa fa-play-circle-o fa-3x"></i><p style="margin:0px">video & Slide Mashup</p></button>&nbsp;&nbsp;&nbsp;
+                      <button id="square-button" class="btn btn-outline-primary btn-secondary"><i class="fa fa-file-text-o fa-3x"></i><p style="margin:0px">Article</p></button>
+                </div>
+                <br>
+              </div>
+
+
+              <div id="collapseOne{{i}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="container">
+                    <button mat-button style="border: 1px solid cornflowerblue;" *ngIf="!resourse" (click)="description=true"><i
+                        class="fa fa-plus"></i> Description</button><br><br />
+                    <button mat-button style="border: 1px solid cornflowerblue;" *ngIf="!description" (click)="resourse=true;"><i
+                        class="fa fa-plus"></i> Resourses</button>
+                  </div>
+                  <div *ngIf="description">
+                    <label for="">Lecture Description:</label>
+                    <quill-editor name="quill"></quill-editor>
+                    <div class="row">
+                      <div class="quilFooter">
+                        <button class="btn btn-sm btn-danger" (click)="description=false">Cancel</button>&nbsp;<button class="btn btn-sm btn-success">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="resourse && !description">
+                    <mat-tab-group>
+                      <mat-tab label="Downloadable File">
+                        <div class="container" style="padding-top: 2%">
+                          <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" id="customFile" name="filename">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                          </div>
+                          <div><label for=""><b>Note:</b> A resource is for any type of document that can be used to help
+                              students in the lecture. This file is going to be seen as a lecture extra. Make sure everything
+                              is legible and the file size is less than 1 GiB.</label></div>
+                        </div>
+                      </mat-tab>
+                      <mat-tab label="Add from library">
+                        <div style="width: 100%">
+                          <div class="col-md-6"></div>
+                          <div class="col-md-4" style="float: right">
+                            <div class="input-group">
+                              <input type="text" class="form-control"  placeholder="Search" (keyup)="applyFilter($event.target.value)" >
+                              <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-search"></i></span>
+                              </div>
+                            </div></div>
+                        </div>
+                          
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+                          <!-- Filename Column -->
+                          <ng-container matColumnDef="filename">
+                            <th mat-header-cell *matHeaderCellDef> Filename </th>
+                            <td mat-cell *matCellDef="let element"> {{element.filename}} </td>
+                          </ng-container>
+        
+                          <!-- Type Column -->
+                          <ng-container matColumnDef="type">
+                            <th mat-header-cell *matHeaderCellDef> Type </th>
+                            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                          </ng-container>
+        
+                          <!-- Status Column -->
+                          <ng-container matColumnDef="status">
+                            <th mat-header-cell *matHeaderCellDef> Status </th>
+                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                          </ng-container>
+        
+                          <!-- Date Column -->
+                          <ng-container matColumnDef="date">
+                            <th mat-header-cell *matHeaderCellDef> Date </th>
+                            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                          </ng-container>
+        
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+        
+                      </mat-tab>
+                      <mat-tab label="External Resource">
+                        <div class="form-group">
+                          <label for="">Title</label>
+                          <input type="text" name="" id="" class="form-control" placeholder="A descriptive title">
+                          <label for="">URL</label>
+                          <input type="text" name="" id="" class="form-control" placeholder="https://example.com">
+                        </div>
+                      </mat-tab>
+                      <mat-tab label="Source Code">
+                        <div class="container" style="padding-top: 2%">
+                          <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" id="customFile" name="filename">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                          </div>
+                          <div><label for=""><b>Note:</b>Only available for Python and Ruby for now. You can upload .py and .rb
+                              files.</label></div>
+                        </div>
+                      </mat-tab>
+                    </mat-tab-group>
+                    <div class="row">
+                      <div class="quilFooter">
+                        <button class="btn btn-sm btn-danger" (click)="resourse=false">Cancel</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+

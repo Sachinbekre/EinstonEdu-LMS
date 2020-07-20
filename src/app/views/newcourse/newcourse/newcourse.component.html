@@ -1,0 +1,39 @@
+<mat-card>
+    <div>
+      <h4>    Performance  </h4>
+      <div class="row">
+        <div class="col-md-3">
+            <div class="vertical-menu">
+                <!-- <a >Overview</a>
+                <a (click)="student();" [class.active]="studentData" routerlink="./" class="active">Students</a>
+                <a (click)="engagement();" [class.active]="engagementData" routerLink="engagement">Course Engagement</a>
+                <a (click)="conversion();" [class.active]="conversionData"  routerLink="conversion">Traffic & Conversion</a>
+             -->
+             <ul>
+               <h6>Plan your course</h6>
+               <li><a class="active">Target your students</a></li>
+               <li><a>Course structure</a></li>
+               <li><a >Step & test video</a> </li>
+
+               <h6>Create  your content</h6>
+               <li><a class="active">Film & Edit</a></li>
+               <li><a>Curriculum</a></li>
+               <li><a >Captions(optional)</a> </li>
+
+               <h6>Publish your course</h6>
+               <li><a class="active">Course landing page</a></li>
+               <li><a routerLink="price-and-coupon">Price & coupons</a></li>
+               <li><a routerLink="communication">Communication</a> </li>
+               
+             </ul>
+              </div>
+        </div>
+    
+        <div class="col-md-8">
+            <router-outlet></router-outlet>
+          </div>
+      </div>
+     
+       
+    </div>
+    </mat-card>

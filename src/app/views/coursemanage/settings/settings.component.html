@@ -1,0 +1,116 @@
+<div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>Settings</h5>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-5">
+          <ng-multiselect-dropdown [placeholder]="'Manage Email Notifications'" [data]="dropdownList" [(ngModel)]="selectedItems"
+            [settings]="dropdownSettings">
+          </ng-multiselect-dropdown>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="card-body mediaPrepend">
+      <form #userForm="ngForm" appIdentityRevealed>
+        <div class="form-group">
+  
+          <label> <b>Privacy</b> </label>
+          <div>
+            <select name="" id="" class="browser-default custom-select">
+              <option selected>Open this select menu</option>
+              <option value="">Public</option>
+              <option value="">Private (Invitation only)</option>
+              <option value="">Private (password protected)</option>
+  
+            </select>
+          </div>
+          <label> Public courses show up in search results and are available for anyone to take on EinstonEdu.</label>
+          <div><button data-purpose="save-instructor-button" type="button" class="btn btn-primary">Save</button></div>
+  
+  
+          <hr>
+  
+          <div class="main-content--wrap_component--2TEkz">
+            <p class="blockLabel"> <b>Permissions</b> </p>
+            <div class="manage-instructors">
+              <div class="table-container table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Instructor</th>
+                      <th scope="col">Visible</th>
+                      <th scope="col">Manage</th>
+                      <th scope="col">Captions</th>
+                      <th scope="col">Performance</th>
+                      <th scope="col">Q&A</th>
+                      <th scope="col">Assignments</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Prathik Pai <span><span class="label label-default">Owner</span></span> </th>
+                      <td>
+                        <div class="checkbox"><label title=""><input type="checkbox" checked=""><span class="checkbox-label"></span></label></div>
+                      </td>
+                      <td>
+                        <div class="checkbox"><label title=""><input type="checkbox" checked=""><span class="checkbox-label"></span></label></div>
+                      </td>
+                      <td>
+                        <div class="checkbox"><label title=""><input type="checkbox" checked=""><span class="checkbox-label"></span></label></div>
+                      </td>
+                      <td>
+                        <div class="checkbox"><label title=""><input type="checkbox" checked=""><span class="checkbox-label"></span></label></div>
+                      </td>
+                      <td>
+                        <div class="checkbox"><label title=""><input type="checkbox" checked=""><span class="checkbox-label"></span></label></div>
+                      </td>
+                      <td>
+                        <div class="checkbox"><label title=""><input type="checkbox" checked=""><span class="checkbox-label"></span></label></div>
+                      </td>
+                    </tr>
+  
+  
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt20">
+                <form class="">
+                  <div class="form-group"><span class="input-group"><input placeholder="Enter an email associated with a Udemy account"
+                        type="text" class="form-control" value=""><span class="input-group-btn"><button type="submit"
+                          disabled="" class="btn btn-secondary">Add</button></span></span></div>
+                </form>
+              </div>
+              <div><button data-purpose="save-instructor-button" type="button" class="btn btn-primary">Save</button></div>
+              <div class="mt20"></div>
+            </div>
+          </div>
+          <hr>
+          <p><b>Course Status</b></p>
+          <div class="row">
+  
+            <div class="col-md-2"><button disabled="" type="button" class="unpublish-course--button--gJi58 btn btn-sm btn-default">Unpublish</button></div>
+            <div class="col-md-10">
+              <p class="unpublish-course--info--CmEVw">New students cannot find your course via search, but existing
+                students can still access content.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2"><button type="button" class="delete-course--button--1gQRN btn btn-sm btn-danger">Delete</button></div>
+            <div class="col-md-10">
+              <p class="delete-course--info--3vg8a">We promise students lifetime access, so courses cannot be deleted
+                after students have enrolled.</p>
+            </div>
+          </div>
+  
+        </div>
+  
+      </form>
+    </div>
+  
+  
+  
+  </div>

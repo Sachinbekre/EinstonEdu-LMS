@@ -1,0 +1,115 @@
+
+  
+  //avatar
+  .imag{
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;  
+}
+  //avatar
+  .avt{
+    height: 70px;
+    width: 70px;
+    border-radius: 30px;  
+}
+//Social media images
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  margin: 2px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 80%;
+}
+
+.fa:hover {
+   opacity: 0.1; 
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-github {
+  background: #125688;
+  color: white;
+}
+
+
+.fa-globe {
+  background: #031d30;
+  color: white;
+}
+
+
+//media query
+@media only screen and (min-width: 768px) {
+  .test  
+    {
+      padding-left: 50px;
+    }
+ 
+}
+
+//grid layout
+.gridxx {
+  display: grid;
+ 
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto-fit;
+}
+
+@media only screen and (max-width: 320px) {
+
+.gridxx { 
+   font-size: 9px; 
+}
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+.aligngrid { 
+   text-align: right; 
+   margin-right: 1%;
+}
+
+}
+// ghost css
+$row-gap: 15px;
+$ghost-row-gap: ($row-gap - 3) px;
+$min-content-height: 459px;
+:host {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    min-height: $min-content-height;
+}
+
+.spinner {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}

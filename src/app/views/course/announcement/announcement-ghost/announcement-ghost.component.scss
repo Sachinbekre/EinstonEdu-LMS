@@ -1,0 +1,63 @@
+
+@import '../../../utils/animations/ghost-animation.scss';
+@import '../announcement.component.scss';
+:host {
+    position: absolute;
+    display:block;  
+    overflow: hidden;
+  
+    // top:87px;   
+    width: 100%;
+  
+    // -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
+  }
+  
+
+  .ghost_item {
+    overflow: hidden;
+    margin-bottom: -6px;
+  
+    .avatar {
+        float: left;
+      background-color: #ddd; 
+      border: solid 1px rgb(212, 212, 212);
+      border-radius: 50%;  
+    //   @include animate-ghost-avatar;
+      background: url(assets/silohuette.svg);
+      background-size: 50px 50px; 
+      height: 50px;
+      width: 50px;
+    //   border-radius: 22px;
+  
+    }
+  
+    .lines { 
+  
+       margin-block-end: $ghost-row-gap; 
+       
+      h6,a,h4{
+        
+        background-color: #ccc;
+        border-bottom: 1px solid white;
+        border-radius: 4px 4px 4px 4px;
+        @include animate-ghost-line;
+      }
+  
+      h6 {
+        width: 40%;
+        height: 19px;
+      }  
+  
+      a {
+        // width: 190%;
+        height: 20px;
+        padding-left: 60% !important;
+      }
+      h4{
+        height: 20px;
+        padding-left: 80% !important;
+      }
+    }
+  
+  }
+  

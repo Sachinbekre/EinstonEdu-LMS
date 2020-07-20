@@ -1,0 +1,138 @@
+<div class="container">
+
+  <div style="text-align: center" *ngIf="!parentvalue">
+    <div>
+      <h2> Public profile</h2>
+    </div>
+    <div>
+      <h6>Add information about yourself</h6>
+    </div>
+  </div>
+
+
+  <hr>
+  <label for="">Basics:</label>
+  <div class="card-body">
+    <form #userForm="ngForm" appIdentityRevealed>
+      <div class="form-group">
+        <div class="row">
+          <div class="col md-6">
+            <input type="text" id="fname" name="fname" class="form-control" [(ngModel)]="user.fname" #fname="ngModel"  placeholder="First Name" required />
+            <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger">
+                <div *ngIf="fname.errors.required">
+                    First Name is required.
+                  </div>
+            </div>
+          </div>
+         
+          <div class="col md-6">
+            <input type="text" id="lname" name="lname" class="form-control" [(ngModel)]="user.lname" #lname="ngModel"  class="form-control" placeholder="Last Name" required/>
+            <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert alert-danger">
+                <div *ngIf="lname.errors.required">
+                    Last Name is required.
+                  </div>
+            </div>
+          </div>
+         
+        </div>
+       
+      </div>
+      <div class="form-group">
+    
+        <input type="text" id="hline" name="hline" class="form-control" [(ngModel)]="user.hline" #hline="ngModel"  class="form-control" class="form-control" placeholder="Headline"  required/>
+        <span> <small>Add a professional headline like, 'Engineer at Udemy' or 'Architect.'</small> </span>
+
+        <div *ngIf="hline.invalid && (hline.dirty || hline.touched)" class="alert alert-danger">
+            <div *ngIf="hline.errors.required">
+               Headline is required.
+              </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <label for="">Biography:</label>
+        <quill-editor [(ngModel)]="content" name="quill"></quill-editor>
+      </div>
+
+      <div class="form-group">
+        <select name="locale" required="" class="form-control">
+          <option value="">-- Select Language --</option>
+          <option value="de_DE">Deutsch</option>
+          <option value="en_GB" selected="">English (UK)</option>
+          <option value="en_US">English (US)</option>
+          <option value="es_ES">Español (España)</option>
+          <option value="fr_FR">Français (France)</option>
+          <option value="it_IT">Italiano</option>
+          <option value="ja_JP">日本語</option>
+          <option value="ko_KR">한국어</option>
+          <option value="nl_NL">Nederlands</option>
+          <option value="pl_PL">Polski</option>
+          <option value="pt_BR">Português (Brasil)</option>
+          <option value="ro_RO">Română</option>
+          <option value="ru_RU">Русский</option>
+          <option value="tr_TR">Türkçe</option>
+          <option value="zh_CN">中文(简体)</option>
+          <option value="zh_TW">中文 (繁體)</option>
+    
+        </select>
+      </div>
+    </form>
+  </div>
+  <hr>
+
+  <label for="">Links:</label>
+  <div class="card-body">
+    <div class="form-group">
+
+      <input type="url" class="form-control" placeholder="Website (http(s)://..)">
+    </div>
+    <form action="" method="post">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend ">
+            <span class="input-group-text mediaPrepend">http(s)://twitter.com/</span>
+          </div>
+          <input type="url" name="username3" class="form-control" placeholder="twitter profile">
+
+
+        </div>
+        <span> <small>Add your Twitter username (e.g. johnsmith).</small> </span>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend ">
+            <span class="input-group-text mediaPrepend">http(s)://www.facebook.com/</span>
+          </div>
+          <input type="url" name="email3" class="form-control" placeholder="facebook profile">
+
+
+        </div>
+        <span> <small>Input your Facebook username (e.g. johnsmith).</small> </span>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend ">
+            <span class="input-group-text mediaPrepend">http(s)://www.linkedin.com/</span>
+          </div>
+          <input type="url" name="password3" class="form-control" placeholder="linkedin profile">
+
+        </div>
+        <span> <small>Input your LinkedIn resource id (e.g. in/johnsmith).</small> </span>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend ">
+            <span class="input-group-text mediaPrepend  ">http(s)://www.youtube.com/</span>
+          </div>
+          <input type="url" name="password3" class="form-control" placeholder="youtube profile">
+
+        </div>
+        <span> <small>Input your Youtube username (e.g. johnsmith).</small> </span>
+      </div>
+      <hr>
+      <div class="form-group form-actions">
+        <button type="submit" class="btn btn-primary pull-right">Save</button>
+      </div>
+    </form>
+  </div>
+
+</div>

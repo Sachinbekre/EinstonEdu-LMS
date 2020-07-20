@@ -1,0 +1,55 @@
+
+@import '../../../utils/animations/ghost-animation.scss';
+@import '../overview.component.scss';
+:host {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    // top: 87px;
+    width: 100%;
+}
+
+.ghost_item {
+    overflow: hidden;
+    margin-bottom: -6px;
+    height: auto;
+    .lines {
+        margin-block-end: $ghost-row-gap;
+        // margin-left: $avatar-gap;
+        margin-block-end: $row-gap;
+        // width: calc(100% - $avatar-gap);
+        h4,
+        h5,
+        .card,
+        .matCard,
+        .card-header,
+        .card-footer {
+            background-color: #ccc !important;
+            border-bottom: 1px solid white !important;
+            border-radius: 4px 4px 4px 4px;
+            @include animate-ghost-line;
+        }
+        h4 ,h5{
+            width: 30%;
+            height: 30px;
+        }
+        .imag{
+            height: 50px;
+            width: 50px;
+            border-radius: 18px !important;  
+        }
+        }
+        .imag {
+            // float: left;
+          background-color: #ddd; 
+          border: solid 1px rgb(212, 212, 212);
+          border-radius: 50%;  
+        //   @include animate-ghost-avatar;
+          background: url(assets/silohuette.svg);
+          background-size: 50px 50px; 
+          height: 50px;
+          width: 50px;
+        //   border-radius: 20px;  
+      
+        }
+    }

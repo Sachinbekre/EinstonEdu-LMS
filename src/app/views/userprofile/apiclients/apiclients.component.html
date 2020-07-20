@@ -1,0 +1,84 @@
+<div class="container">
+
+  <div style="text-align: center">
+    <div>
+      <h2> API Clients</h2>
+    </div>
+    <div>
+      <h6> Create and list your API clients.</h6>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="card-body">
+    <label for="">
+      <h4>Affiliate API</h4>
+    </label>
+    <div>
+      <label for="">The Enston Edu Affiliate API exposes functionalities of Enston Edu to help developers build client
+        applications
+        and integrations with Enston Edu. To see more details, please visit <a href="#">Enston Edu</a> </label>
+      <a href="#">Affiliate API</a> <br>
+      <button type="button" data-toggle="modal" (click)="myModal1.show()" class="edit-handle btn btn-default">Request
+        Affiliate API Client</button>
+    </div>
+    <br>
+
+    <div class="alert alert-info">
+      You don't have any API clients yet.
+    </div>
+    <hr>
+   
+  </div>
+
+
+  <div bsModal #myModal1="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModal1Label"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">REQUEST API CLIENT</h4>
+          <i class="fa fa-close" (click)="myModal1.hide()"></i>
+        </div>
+        <div class="modal-body">
+
+          <div class="card-body">
+            <div class="form-group">
+              <label for="">Name</label>
+              <input type="text" class="form-control" placeholder="Your client Name">
+              <span> <small>Give a name for your client</small> </span>
+            </div>
+            <div class="form-group">
+              <label for="">Description</label>
+              <textarea type="" class="form-control" placeholder="Your client Description"></textarea>
+              <span> <small>Please describe in detail how you are planning to use Udemy API with this client.</small>
+              </span>
+            </div>
+            <div class="form-group">
+                <label for="">Website</label>
+                <div class="input-group">
+                
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">http(s)://</span>
+                  </div>
+                  <input type="password" name="password3" class="form-control" placeholder="Enter the wesite Url">
+                 
+                </div>
+                <span> <small>Your application or website's publicly accessible home page, where users can go to download, make use of, or find out more about your application/website.
+                  </small> </span>
+              </div>
+              <hr>
+    <button type="submit" class="btn btn-primary pull-right">Save</button>
+          </div>
+
+
+
+
+        </div>
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+
+</div>

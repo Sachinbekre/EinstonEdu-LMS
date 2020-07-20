@@ -1,0 +1,114 @@
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.Coursefilter{
+  margin-top: 1%;
+  margin-bottom:2%;
+}
+.mycourses{
+  text-align: left;
+  background-color: #FFF;
+  position: relative;
+  border: none;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 233px;
+  min-height: 252px;
+  min-width: 233px;
+}
+@media only screen and (max-width: 352px) {
+  .mycourses {
+   max-width: 282px;
+   min-width: 282px;
+   min-height: 282px;
+   max-height: 282px;
+   padding-left: 2%;
+   }
+ }
+.imageAngular {
+    position: relative;
+  }
+    
+  .imageAngular:hover .image {
+    opacity: 0.3;
+  }
+  .imageAngular:hover .middle {
+    opacity: 1;
+  }
+  .text {
+    width: 90px;
+    height:90px;
+    margin-top: 60%;
+  }
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+   .courseDetails{
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-right:2%;
+   }
+.coursecomplete{
+  display: flex;
+  font-size: smaller;
+}
+.collection {
+  position:absolute;
+  top: 10%;
+  left: 90%;
+}
+.rate-btn #two{
+  display: none;
+}
+
+.rate-btn:hover #one {
+  display: none;
+}
+
+.rate-btn:hover #two {
+  color:blue;
+  display: block;
+}
+.details{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  height: 39px;
+}
+.dropdown-item{
+  padding: 0.25rem 1.5rem;
+   border: 0;
+}
+
+//ghost
+$row-gap: 15px;
+$ghost-row-gap: ($row-gap - 3) px;
+$min-content-height: 459px;
+
+:host {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  min-height: $min-content-height;
+}

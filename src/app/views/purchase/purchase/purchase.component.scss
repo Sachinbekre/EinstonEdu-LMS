@@ -1,0 +1,30 @@
+@media only screen and (min-width:768px) {
+    .mediaContent {
+      padding:0 40px;
+ 
+    }
+  }
+  h4{
+    margin-bottom: 2%
+  }
+  .viewCourse:hover{
+    color: red !important;
+    margin-bottom: 5% !important;
+  }
+  .shopping_img {
+    width: 135px;
+    margin-right: 15px;
+    float: left;
+    height: auto;
+}
+.shopping-list__course-title{
+    color: #505763;
+    font-weight: 600;
+    font-size: 14px;
+    // display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-height: 62px;
+    text-decoration: none;
+}

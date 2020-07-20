@@ -1,0 +1,78 @@
+<div class="row rowstyle">
+  <div class="col-md-3 mat-card" style="background-color:#f2f5f4;">
+    <div id="user-short">
+      <div class="fx-c">
+        <div class="user-avatar user-avatar--initials " style="width: 90px; font-size: 56px;">
+          <div class=" fx-c">
+            <span *ngIf="!user.avatar" class="user-initials">{{user.first_name.charAt(0)}} </span>
+            <img *ngIf="user.avatar" class="avatar" src="{{user.avatar}}" alt="" height="100%" width="100%">
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>{{user.first_name}}</h2>
+      </div>
+      <div class="sidemenufont menu">
+        <ul style="list-style-type: none;">
+          <a routerLink="./publicprofile">
+            <li class="">
+              View Public Profile
+            </li>
+          </a>
+          <a routerLink="./" (click)=setaprofile()>
+            <li class="">
+              Profile
+            </li>
+          </a>
+          <a routerLink="./photo">
+            <li class="">
+              Photo
+            </li>
+          </a>
+          <a routerLink="./payoutsetting" (click)="serPayout()">
+            <li class="">
+              Payout Settings
+            </li>
+          </a>
+          <a routerLink="./account">
+            <li class="">
+              Account
+            </li>
+          </a>
+          <a routerLink="./#" target="_blank">
+            <li class=" ">
+              Credit Cards
+            </li>
+          </a>
+          <a routerLink="./privacy">
+            <li class="">
+              Privacy
+            </li>
+          </a>
+          <a routerLink="./notification">
+            <li class="">
+              Notifications
+            </li>
+          </a>
+          <a routerLink="./apiclients">
+            <li class="">
+              API Clients
+            </li>
+          </a>
+          <a routerLink="./closeaccount">
+            <li class="">
+              Close Account
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9" style="padding-right:0px !important;padding-left:5px !important;">
+    <mat-card style="min-height: 618px">
+      <mat-card-content>
+        <router-outlet></router-outlet>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

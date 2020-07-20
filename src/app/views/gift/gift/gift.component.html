@@ -1,0 +1,50 @@
+<div class="card">
+  <div style="text-align:center" class="form-group">
+    <h3>Wrap Your Gift</h3>
+    <h6>Prep your gift and double-check 3 looks just right</h6>
+  </div>
+
+  <div class="col-md-12 ml" >
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" style="padding:2%">
+          <div class="form-group">
+            <label>Recipient's Name:</label>
+            <input type="text" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Recipient's Email:</label>
+            <input type="text" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>When do you want to send this gift:</label>
+            <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [(bsValue)]="bsValue">
+          </div>
+          <div class="form-group">
+            <label>Your Message (optional):</label>
+            <textarea rows="2" class="form-control" placeholder="Add your personal message here"></textarea>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-danger">Proceed to checkout</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" >
+          <div class="card" >
+             
+              <div style="width: 100%;" class="giftBanner">
+                <img class="giftBanner" width="932" height="122" src="assets/gift.jpg" alt="">
+              </div>
+            <div class="wrapper">
+              <img class="form-group" width="480" height="270" src="assets/img/angular.png" alt="course image">
+              <h5 class="form-group"> <a href="">Angular Crash Course for Busy Developers</a></h5>
+         
+              <p class="form-group">An online course by Jaysen Batchelor</p>
+            </div>
+            
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>

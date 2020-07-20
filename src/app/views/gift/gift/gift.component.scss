@@ -1,0 +1,23 @@
+.wrapper{
+    padding: 25px;
+    font-size: 16px;
+}
+.wrapper>img{
+    border: 3px solid #FFF;
+    box-shadow: 0 0 2px #686F7A;
+    width: 100%;
+}
+.giftBanner{
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+.ml{
+    margin-left:17%;
+}
+@media (max-width: 761px){
+.ml{
+    margin-left:0%;
+}
+}
